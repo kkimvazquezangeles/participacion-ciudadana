@@ -14,8 +14,6 @@ public interface PersonaService {
     String PROPERTY_NOMBRE              = "nombre";
     String PROPERTY_PATERNO             = "paterno";
     String PROPERTY_MATERNO             = "materno";
-    String PROPERTY_DEPTO_ID            = "deptoId";
-    String PROPERTY_DEPTO_DES           = "deptoDes";
     String PROPERTY_FECHA_REGISTRO      = "fechaRegistro";
 
     Map<String,Object> createJugador(Map<String, String> jugador, User user);

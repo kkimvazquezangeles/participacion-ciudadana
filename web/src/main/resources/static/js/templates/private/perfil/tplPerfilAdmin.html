@@ -1,54 +1,23 @@
- <div class="form-2">
-        <div>
-            <i id="btn-exit" class="icon fa-power-off" title="Salir"></i>
-            <i id="btn-upload" class="icon fa-upload" title="Subir archivo"></i>
-            <input id="file-es" class="hidden" name="fileupload" type="file">
-        </div>
-        <div class="icono">
-            <img src="imagenes/<%= deptoId %>.png">
-        </div>
-        <div class="letra">
-            <a> <%= deptoDes %> </a><br>
-            <a> <%= nombre %> <%= paterno %> <%= materno %> </a>
-            <div id="menu-container">
-                <table class="menu">
-                    <thead>
-                    <tbody>
-                    <td>
-                        <img id="admin" value="4" class="menu-action" src="imagenes/4.png" title="Administración">
-                    </td>
-                    <td>
-                        <img id="afiliacion" value="2" class="menu-action" src="imagenes/2.png" title="Afiliación">
-                    </td>
-                    <td>
-                        <img id="financiento" value="5" class="menu-action" src="imagenes/5.png" title="Financiamiento">
-                    </td>
-                    <td>
-                        <img id="gestion" value="3" class="menu-action" src="imagenes/3.png" title="Gestión">
-                    </td>
-                    <td>
-                        <img id="prospera" value="6" class="menu-action" src="imagenes/6.png" title="Prospera">
-                    </td>
-                    <td>
-                        <img id="prospectiva" value="7" class="menu-action" src="imagenes/7.png" title="Prospectiva">
-                    </td>
-                    <td>
-                        <img id="evaluacion" value="8" class="menu-action" src="imagenes/8.png" title="Evaluación">
-                    </td>
-                    </tbody>
-                    </thead>
-                </table>
-            </div>
-        </div>
-        <div>
-            <table id="grid-data" class="table">
-                <thead>
-                <th data-column-id="id">Nombre del archivo</th>
-                <th data-column-id="date">Fecha</th>
-                <th data-column-id="commands" colspan="2">Opciones</th>
-                <tbody>
-                </tbody>
-                </thead>
-            </table>
-        </div>
-</div>
+<section class="consulta">
+    <div>
+        <h4>Selecciona los datos para generar una consulta</h4>
+    </div>
+    <div class="form-4">
+        <select class="select">
+            <option value="volvo">Municipio</option>
+            <option value="saab">Agua Blanca de Iturbide</option>
+            <option value="mercedes">Ajacuba</option>
+            <option value="audi">Alfajayucan</option>
+        </select>
+        <select>
+            <option value="volvo">Localidad</option>
+            <option value="saab">Agua Blanca de Iturbide</option>
+            <option value="mercedes">Ajacuba</option>
+            <option value="audi">Alfajayucan</option>
+        </select>
+    </div>
+    <div class="botones">
+        <button id="btn-salir" class="button" type="button">Salir</button>
+        <button id="btn-consultar" class="button" type="button">Consultar</button>
+    </div>
+</section>

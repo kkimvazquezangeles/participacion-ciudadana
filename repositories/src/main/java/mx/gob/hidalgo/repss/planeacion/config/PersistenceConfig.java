@@ -88,6 +88,7 @@ public class PersistenceConfig {
         ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
         resourceDatabasePopulator.addScript(new ClassPathResource("/mx/gob/hidalgo/repss/planeacion/scripts/h2/dml/user.sql"));
         resourceDatabasePopulator.addScript(new ClassPathResource("/mx/gob/hidalgo/repss/planeacion/scripts/h2/dml/departamento.sql"));
+        resourceDatabasePopulator.addScript(new ClassPathResource("/mx/gob/hidalgo/repss/planeacion/scripts/h2/dml/localidad.sql"));
         resourceDatabasePopulator.addScript(new ClassPathResource("/mx/gob/hidalgo/repss/planeacion/scripts/h2/dml/persona.sql"));
         resourceDatabasePopulator.addScript(new ClassPathResource("/mx/gob/hidalgo/repss/planeacion/scripts/h2/dml/archivo.sql"));
 

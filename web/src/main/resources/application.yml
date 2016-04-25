@@ -5,8 +5,8 @@ server:
 security.basic.enabled: false
 endpoints.shutdown.enabled: true
 
-spring.profiles.active: preprobd
-spring.profiles.include: googlestorage,devmail
+spring.profiles.active: devbd
+spring.profiles.include: localhomestorage,devmail
 
 ---
 spring:

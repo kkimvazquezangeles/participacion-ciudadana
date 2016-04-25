@@ -34,7 +34,6 @@ public class ArchivoServiceImpl implements ArchivoService {
     @Override
     public Map<String, Object> createArchivo(Map<String, String> archivoMap, User admin) {
         Archivo archivo = convertMapToArchivo(archivoMap);
-        archivo.setPersona(personaRepository.findByAdmin(admin));
         return convertArchivoToMap(archivoRepository.save(archivo));
     }
 
