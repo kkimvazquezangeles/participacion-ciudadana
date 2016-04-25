@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12">
+        <form id="form-user" role="form">
+            <p>Especifica tu nuevo password</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" placeholder="Password" type="password" name="password" value="<%= password %>">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input class="form-control" placeholder="Confirm Password" type="password" name="passwordConfirm" value="<%= passwordConfirm %>">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="modal-footer">
+                    <button id="btn-ok" type="button" class="btn btn-success">Cambiar Password</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<html>
+    <body>
+        <font color="#122C09"><h3>Entuliga</h3></font>
+        <p>Por favor para completar el <b>${action}</b> ingrese en el siguiente <b><a href="${link}">link</a></b>.</p>
+        <h6>Esta es una notificación automatica, no responda este correo, gracias.</h6>
+    </body>
+</html>
