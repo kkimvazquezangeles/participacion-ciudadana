@@ -44,7 +44,7 @@ define([
         },
 
         enviar: function() {
-            var data = this.$el.find("#form-2").serializeObject();
+            var data = this.$el.find(".form-2").serializeObject();
             this.model.set(data);
 
             if(this.model.isValid(true)){
