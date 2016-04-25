@@ -49,7 +49,7 @@ define([
         },
 
         cancelar: function(){
-
+            Backbone.history.navigate('/', { trigger : true });
         }
 
 	});
