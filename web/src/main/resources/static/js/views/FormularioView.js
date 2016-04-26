@@ -24,6 +24,7 @@ define([
 
         initialize: function() {
             this.model = new PropuestaModel();
+            Backbone.Validation.bind(this);
 
             this.municipios = new MunicipiosCollection();
             this.listenTo(this.municipios, 'add', this.agregarMunicipio);
@@ -34,7 +35,6 @@ define([
 
             this.model.once("sync", this.savePropuestaSuccess);
             this.model.once("error", this.savePropuestaError);
-            Backbone.Validation.bind(this);
         },
 
         render: function() {
