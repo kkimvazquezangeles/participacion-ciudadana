@@ -47,6 +47,11 @@ picture a {
 .has-error {
     border-color: red !important;
     border-style: solid !important;
+    border-width: .1em !important;
+}
+
+.form-group p {
+    font-size: 10pt;
 }
 
 .form-1 {

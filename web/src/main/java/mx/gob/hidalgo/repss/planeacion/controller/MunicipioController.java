@@ -57,7 +57,7 @@ public class MunicipioController {
     /* Metodo que regresa la lista de localidades por municipio con al menos una propuesta, recibe de parametro el id del municipio mediante la url*/
     @ResponseBody
     @RequestMapping(
-            value = { "/{municipio}/localidades/prpopuesta" },
+            value = { "/{municipio}/localidades/propuesta" },
             method = {RequestMethod.GET},
             produces = {"application/json;charset=UTF-8"})
     public List<Map<String, Object>> listLocalidadesPropuesta(@PathVariable("municipio") Long idMunicipio) {

@@ -4,107 +4,75 @@ define([
     'core/BaseView',
     'models/PerfilModel',
     'models/FileModel',
+    'models/MunicipioModel',
     'views/private/util/ModalGenericView',
     'views/private/perfil/FilesView',
-    'collections/FilesCollection',
+    'collections/MunicipiosPropuestaCollection',
+    'collections/LocalidadesPropuestaCollection',
     'text!templates/private/perfil/tplPerfilAdmin.html',
     'Session'
-], function($, Backbone, BaseView, PerfilModel, FileModel,
-            ModalGenericView, FilesView, FilesCollection,
+], function($, Backbone, BaseView, PerfilModel, FileModel, MunicipioModel,
+            ModalGenericView, FilesView, MunicipiosPropuestaCollection, LocalidadesPropuestaCollection,
             tplPerfilAdmin, Session){
 
     var PerfilAdminView = BaseView.extend({
         template: _.template(tplPerfilAdmin),
 
         events: {
-            'click #btn-upload'         : 'uploadFile',
-            'click .menu-action'        : 'opcionMenu',
             'click #btn-exit'           : 'logout',
-            'change #file-es'           : 'changeFile'
+            'change #select-municipios' : 'cambiarMunicipio'
         },
 
         initialize: function() {
-            this.model = new PerfilModel();
-            this.model.set({id: Session.get('username')});
-            this.files = new FilesCollection();
-            this.listenTo(this.files, 'add', this.agregarFile);
-            this.listenTo(this.files, 'sync', this.syncFiles);
+            this.model = new MunicipioModel();
+            Backbone.Validation.bind(this);
 
-            this.listenTo(this.model, 'sync', this.syncPerfil);
-            this.model.fetch();
+            this.municipios = new MunicipiosPropuestaCollection();
+            this.listenTo(this.municipios, 'add', this.agregarMunicipio);
+            this.listenTo(this.municipios, 'sync', this.syncMunicipio);
+            this.localidades = new LocalidadesPropuestaCollection();
+            this.listenTo(this.localidades, 'add', this.agregarLocalidad);
+            this.listenTo(this.localidades, 'sync', this.syncLocalidad);
         },
 
         render: function() {
-            return this;
-        },
-
-        uploadFile: function(){
-            this.$el.find('#file-es').click();
-        },
-
-        changeFile: function(event) {
-            var that = this;
-            var fileup = $('#file-es')[0].files[0];
-            var data = new FormData();
-            data.append('fileupload', fileup);
-            data.append('idDepto', this.model.get('deptoId'));
-            data.append('username', this.model.get('username'));
-
-            $.ajax({
-                url: 'file/upload/generic',
-                data: data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: 'POST',
-                success: function(data){
-                    var fileModel = new FileModel(data);
-                    alert('Operación realizada con éxito');
-                    that.files.add(fileModel);
-                },
-                error: function(data){
-                    alert('Se presentó un error, vuelva a intentar');
-                }
-            });
-        },
-
-        agregarFile: function(modelo){
-            var vista = new FilesView(modelo);
-            $("#grid-data").find('tbody:last').append(vista.render().$el);
-        },
-
-        syncFiles: function(){
-        },
-
-        syncPerfil: function(){
             this.$el.html(this.template(this.model.toJSON()));
-
-            var roles = Session.get('roles');
-            if(roles[0] !== 'ADMIN'){
-                $('#menu-container').hide();
-                $('#btn-upload').show();
-                this.files.setIdDepto(this.model.get('deptoId'));
-                this.files.fetch();
-            } else {
-                $('#grid-data').hide();
-                $('#btn-upload').hide();
-            }
-        },
-
-        opcionMenu: function(event) {
-            $('#grid-data').show();
-            this.files.reset();
-            $("#grid-data").find('tbody').html('');
-            $('.menu-action').parent().removeClass('menu-select');
-            $(event.currentTarget).parent().addClass('menu-select');
-            this.files.setIdDepto($(event.currentTarget).attr('value'));
-            this.files.fetch();
+            this.municipios.fetch();
+            return this;
         },
 
         logout: function(){
             Session.logout(function(response){
                 Backbone.history.navigate('', { trigger : true });
             });
+        },
+
+        agregarMunicipio: function(modelo){
+            $('#select-municipios').append($('<option>', {
+                value: modelo.get('idMunicipio'),
+                text : modelo.get('municipio')
+            }));
+        },
+
+        syncMunicipio: function(){
+            $('#select-municipios').change();
+        },
+
+        agregarLocalidad: function(modelo){
+            $('#select-localidades').append($('<option>', {
+                value: modelo.get('idLocalidad'),
+                text : modelo.get('localidad')
+            }));
+        },
+
+        syncLocalidad: function(){
+        },
+
+        cambiarMunicipio: function(event) {
+            var idMunicipio = $(event.target).val();
+            this.localidades.setIdMunicipio(idMunicipio);
+            this.localidades.fetch();
+
         }
 
     });
