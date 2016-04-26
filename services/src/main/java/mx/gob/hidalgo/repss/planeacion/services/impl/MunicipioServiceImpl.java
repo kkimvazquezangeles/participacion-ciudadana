@@ -50,13 +50,31 @@ public class MunicipioServiceImpl implements MunicipioService{
     }
 
     @Override
-    public List<Map<String, Object>> listLocalidadesByMunicipioAtLeastPropuesta() {
-        return null;
+    public List<Map<String, Object>> listLocalidadesByMunicipioAtLeastPropuesta(Long idMunicipio) {
+        Municipio municipio = new Municipio();
+        municipio.setId(idMunicipio);
+        Iterator<Localidad> itLocalidad = localidadRepository.findAllByMunicipioAtLeastPropuesta(municipio).iterator();
+        List<Map<String, Object>> copy = new ArrayList<>();
+        while(itLocalidad.hasNext()) {
+            Localidad localidad = itLocalidad.next();
+            Map<String, Object> dto = convertLocalidadToMap(localidad);
+            copy.add(dto);
+        }
+
+        return copy;
     }
 
     @Override
     public List<Map<String, Object>> listMunicipiosAtLeastPropuesta() {
-        return null;
+        Iterator<Municipio> itMunicipio = municipioRepository.findAllAtLeastPropuesta().iterator();
+        List<Map<String, Object>> copy = new ArrayList<>();
+        while(itMunicipio.hasNext()) {
+            Municipio municipio = itMunicipio.next();
+            Map<String, Object> dto = convertMunicipioToMap(municipio);
+            copy.add(dto);
+        }
+
+        return copy;
     }
 
     private Map<String, Object> convertMunicipioToMap(Municipio municipio) {

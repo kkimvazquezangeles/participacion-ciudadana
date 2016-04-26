@@ -15,7 +15,7 @@ public interface MunicipioService {
 
     List<Map<String,Object>> listMunicipios();
     List<Map<String,Object>> listLocalidadesByMunicipio(Long idMunicipio);
-    List<Map<String,Object>> listLocalidadesByMunicipioAtLeastPropuesta();
+    List<Map<String,Object>> listLocalidadesByMunicipioAtLeastPropuesta(Long idMunicipio);
     List<Map<String,Object>> listMunicipiosAtLeastPropuesta();
 
 

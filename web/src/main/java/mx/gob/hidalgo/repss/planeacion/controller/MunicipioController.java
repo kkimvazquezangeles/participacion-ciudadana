@@ -40,7 +40,7 @@ public class MunicipioController {
             method = {RequestMethod.GET},
             produces = {"application/json;charset=UTF-8"})
     public List<Map<String, Object>> listMunicipiosPropuesta() {
-        return municipioService.listMunicipiosPropuesta();
+        return municipioService.listMunicipiosAtLeastPropuesta();
     }
 
 
@@ -52,5 +52,15 @@ public class MunicipioController {
             produces = {"application/json;charset=UTF-8"})
     public List<Map<String, Object>> listLocalidades(@PathVariable("municipio") Long idMunicipio) {
         return municipioService.listLocalidadesByMunicipio(idMunicipio);
+    }
+
+    /* Metodo que regresa la lista de localidades por municipio con al menos una propuesta, recibe de parametro el id del municipio mediante la url*/
+    @ResponseBody
+    @RequestMapping(
+            value = { "/{municipio}/localidades/prpopuesta" },
+            method = {RequestMethod.GET},
+            produces = {"application/json;charset=UTF-8"})
+    public List<Map<String, Object>> listLocalidadesPropuesta(@PathVariable("municipio") Long idMunicipio) {
+        return municipioService.listLocalidadesByMunicipioAtLeastPropuesta(idMunicipio);
     }
 }
