@@ -49,10 +49,20 @@ define([
 
             if(this.model.isValid(true)){
                 this.model.save();
+                alert("Gracias por tu opinión");
+            } else {
+                $('input[name=nombre]').addClass('has-error');
+                $('input[name=propuesta1]').addClass('has-error');
+                $('select[name=idLocalidad]').addClass('has-error');
             }
+
+
         },
 
         cancelar: function() {
+                $('input[name=nombre]').removeClass('has-error');
+                $('input[name=propuesta1]').removeClass('has-error');
+                $('select[name=idLocalidad]').removeClass('has-error');
 
         },
 
@@ -95,6 +105,7 @@ define([
             this.localidades.fetch();
 
         }
+
 
 	});
 
