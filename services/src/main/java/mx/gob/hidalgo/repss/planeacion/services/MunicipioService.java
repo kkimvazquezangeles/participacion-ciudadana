@@ -14,8 +14,9 @@ public interface MunicipioService {
     String PROPERTY_LOCALIDAD = "localidad";
 
     List<Map<String,Object>> listMunicipios();
-    List<Map<String,Object>> listMunicipiosPropuesta();
     List<Map<String,Object>> listLocalidadesByMunicipio(Long idMunicipio);
+    List<Map<String,Object>> listLocalidadesByMunicipioAtLeastPropuesta();
+    List<Map<String,Object>> listMunicipiosAtLeastPropuesta();
 
 
 }

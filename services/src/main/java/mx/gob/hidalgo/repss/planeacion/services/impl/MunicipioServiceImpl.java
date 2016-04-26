@@ -35,12 +35,6 @@ public class MunicipioServiceImpl implements MunicipioService{
     }
 
     @Override
-    public List<Map<String, Object>> listMunicipiosPropuesta() {
-
-        return null;
-    }
-
-    @Override
     public List<Map<String, Object>> listLocalidadesByMunicipio(Long idMunicipio) {
         Municipio municipio = new Municipio();
         municipio.setId(idMunicipio);
@@ -53,6 +47,16 @@ public class MunicipioServiceImpl implements MunicipioService{
         }
 
         return copy;
+    }
+
+    @Override
+    public List<Map<String, Object>> listLocalidadesByMunicipioAtLeastPropuesta() {
+        return null;
+    }
+
+    @Override
+    public List<Map<String, Object>> listMunicipiosAtLeastPropuesta() {
+        return null;
     }
 
     private Map<String, Object> convertMunicipioToMap(Municipio municipio) {

@@ -11,4 +11,5 @@ import java.util.List;
  */
 public interface LocalidadRepository extends CrudRepository<Localidad, Long> {
     List<Localidad> findAllByMunicipio(Municipio municipio);
+    List<Localidad> findAllByMunicipioAtLeastPropuesta();
 }

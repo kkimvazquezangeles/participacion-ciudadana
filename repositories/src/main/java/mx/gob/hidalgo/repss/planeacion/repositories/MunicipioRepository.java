@@ -10,5 +10,5 @@ import java.util.List;
  * Created by kkimvazquezangeles on 21/04/16.
  */
 public interface MunicipioRepository extends CrudRepository<Municipio, Long> {
-
+    List<Municipio> findAllAtLeastPropuesta();
 }
