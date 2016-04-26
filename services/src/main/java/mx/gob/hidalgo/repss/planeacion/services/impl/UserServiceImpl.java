@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
     public Map<String, Object> findByUsername(String username) {
         User user = userRepository.findByUsername(username);
         Map<String, Object> result = convertUserToMap(user);
-        result.putAll(personaService.listJugadorByAdmin(user));
+        /*result.putAll(personaService.listJugadorByAdmin(user));*/
         return result;
     }
 

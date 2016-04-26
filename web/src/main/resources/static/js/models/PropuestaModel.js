@@ -24,18 +24,22 @@ define([
         initialize: function() {
         },
 
-        validate: function(atributos) {
-            if(!atributos.nombre) {
-                return 'Captura tu nombre completo.';
-            }
-            if(!atributos.propuesta1) {
-                return 'Debes realizar al menos una propuesta.';
-            }
-            if(!atributos.idMunicipio) {
-                return 'Selecciona tu municipio.';
-            }
-            if(!atributos.idLocalidad) {
-                return 'Selecciona tu localidad.';
+        validation: {
+            nombre: {
+                required: true,
+                msg: 'Por favor indica cual es tu nombre'
+            },
+            idMunicipio: {
+                required: true,
+                msg: 'Selecciona tu municipio'
+            },
+            idLocalidad: {
+                required: true,
+                msg: 'Selecciona tu localidad'
+            },
+            propuesta1: {
+                required: true,
+                msg: 'Escribe una propuesta'
             }
         }
 
