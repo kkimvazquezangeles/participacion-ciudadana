@@ -18,7 +18,7 @@ public interface PropuestaRepository extends CrudRepository<Propuesta, Long> {
     @Query("Select new map(pr.persona.localidad.municipio.id as municipio, count(*) as valor) " +
             "from Propuesta pr " +
             "group by pr.persona.localidad.municipio.id " +
-            "order by pr.persona.localidad.municipio.municipio ")
+            "order by pr.persona.localidad.municipio.id ")
     List<Map> findLimitLideresPuntosByTorneo();
 
 }

@@ -100,6 +100,7 @@ define([
         cambiarMunicipio: function(event) {
             var idMunicipio = $(event.target).val();
             this.localidades.setIdMunicipio(idMunicipio);
+            $('#select-localidades').empty();
             this.localidades.fetch();
 
         }
