@@ -11,11 +11,12 @@ define([
     'views/private/perfil/FilesView',
     'collections/MunicipiosPropuestaCollection',
     'collections/LocalidadesPropuestaCollection',
+    'collections/MapCollection',
     'text!templates/private/perfil/tplPerfilAdmin.html',
     'Session'
 ], function($, Backbone, karto, raphael, BaseView, PerfilModel, FileModel, MunicipioModel,
             ModalGenericView, FilesView, MunicipiosPropuestaCollection, LocalidadesPropuestaCollection,
-            tplPerfilAdmin, Session){
+            MapCollection, tplPerfilAdmin, Session){
 
     var PerfilAdminView = BaseView.extend({
         template: _.template(tplPerfilAdmin),
@@ -36,6 +37,10 @@ define([
             this.localidades = new LocalidadesPropuestaCollection();
             this.listenTo(this.localidades, 'add', this.agregarLocalidad);
             this.listenTo(this.localidades, 'sync', this.syncLocalidad);
+
+            this.totales = new MapCollection();
+            this.listenTo(this.totales, 'sync', this.syncTotales);
+            this.totales.fetch();
         },
 
         render: function() {
@@ -72,6 +77,10 @@ define([
         syncLocalidad: function(){
         },
 
+        syncTotales: function(){
+
+        },
+
         cambiarMunicipio: function(event) {
             var idMunicipio = $(event.target).val();
             this.localidades.setIdMunicipio(idMunicipio);
@@ -82,9 +91,9 @@ define([
 
         setUpMap: function(){
 	        var svgUrl = 'imagenes/HG.svg',
-    	        opts = { padding: 0 };
+    	        opts = { padding: 0, data: this.totales };
 
-            kartograph.map('#map').loadMap(svgUrl, this.mapLoaded, opts);
+            kartograph.map('#map').loadMap(svgUrl, this.mapLoaded.bind(this), opts);
         },
 
         downloadFile: function(){
@@ -99,11 +108,20 @@ define([
                     stroke: '#aaa',
                     fill: '#f6f4f2'
                 },
-                mouseenter: function(d, path) {
+                mouseenter: function(d, path, event) {
                     path.attr('fill', Math.random() < 0.5 ? '#CC3' : '#F60');
+                    var munTotal = this.layer.map.opts.data.where({ municipio: Number(d.postal) });
+                    var total = 0;
+                    if (munTotal.length > 0){
+                        total = munTotal[0].get('valor');
+                    }
+                    $('#sumary-mun').html("<span class='tooltip'>" + d.name + " propuestas: " + total + "</span>")
                 },
                 mouseleave: function(d, path) {
                     path.animate({ fill: '#f6f4f2' }, 1000);
+                },
+                title: function(data) {
+                    return data.name;
                 }
             });
 

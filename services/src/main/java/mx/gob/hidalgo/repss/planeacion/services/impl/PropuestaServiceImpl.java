@@ -9,8 +9,8 @@ import mx.gob.hidalgo.repss.planeacion.services.PropuestaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,6 +40,11 @@ public class PropuestaServiceImpl implements PropuestaService{
     @Override
     public Map<String, Object> listPropuestaByLocalidades(Long idLocalidad) {
         return null;
+    }
+
+    @Override
+    public List<Map> listTotalByMunicipio() {
+        return propuestaRepository.findLimitLideresPuntosByTorneo();
     }
 
 

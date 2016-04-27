@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,5 +45,14 @@ public class PropuestaController {
             produces = {"application/json;charset=UTF-8"})
     public Map<String, Object> listPropuestaByLocalidades(@PathVariable("localidad") Long idLocalidad) {
         return propuestaService.listPropuestaByLocalidades(idLocalidad);
+    }
+
+    @ResponseBody
+    @RequestMapping(
+            value = { "/totalByMunicipio" },
+            method = {RequestMethod.GET},
+            produces = {"application/json;charset=UTF-8"})
+    public List<Map> listTotalByMunicipio() {
+        return propuestaService.listTotalByMunicipio();
     }
 }

@@ -1,5 +1,6 @@
 package mx.gob.hidalgo.repss.planeacion.services;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,4 +27,5 @@ public interface PropuestaService {
     Map<String,Object> listPropuestasByMunicipio(Long idMunicipio);
     Map<String,Object> listPropuestaByLocalidades(Long idLocalidad);
 
+    List<Map> listTotalByMunicipio();
 }
