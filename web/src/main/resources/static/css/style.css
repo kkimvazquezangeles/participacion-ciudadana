@@ -434,13 +434,20 @@ select {
 .form-4 {
     /* Size & position */
     width: 230px;
-    margin: 60px auto 20px;
+    margin: 60px auto 0px;
     position: relative; /* For the submit button positioning */
     border-radius: 5px;
 }
 
 .form-4 .select {
-    margin: .2em auto 0 2.8em;
+    margin: .2em auto 0 1.7em;
+}
+
+.sumary {
+     font-size: 10pt;
+     margin: 0 auto 2em;
+     color: cadetblue;
+     text-align: center;
 }
 
 #map{
