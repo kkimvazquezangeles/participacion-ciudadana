@@ -6,7 +6,7 @@ define([
     var LocalidadesPropuestaCollection = Backbone.Collection.extend({
         model: MunicipioModel,
         url: function() {
-            return this.idMunicipio + '/localidades/' + 'propuesta';
+            return 'municipio/' + this.idMunicipio + '/localidades/propuesta';
         },
         setIdMunicipio: function(idMunicipio){
             this.idMunicipio = idMunicipio;

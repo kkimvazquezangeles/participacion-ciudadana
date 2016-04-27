@@ -71,6 +71,11 @@ define([
         cambiarMunicipio: function(event) {
             var idMunicipio = $(event.target).val();
             this.localidades.setIdMunicipio(idMunicipio);
+            $('#select-localidades').html('');
+            $('#select-localidades').append($('<option>', {
+                value: ('0'),
+                text : ('Localidad')
+            }));
             this.localidades.fetch();
 
         }
