@@ -47,7 +47,7 @@ public class ReportController {
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource.getConnection());
 
         response.setContentType("application/x-pdf");
-        response.setHeader("Content-disposition", "inline; filename=AsignacionDeTutores.pdf");
+        response.setHeader("Content-disposition", "inline; filename=participación ciudadana.pdf");
 
         final OutputStream outStream = response.getOutputStream();
         JasperExportManager.exportReportToPdfStream(jasperPrint, outStream);
