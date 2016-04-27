@@ -12,7 +12,7 @@
         <select id="select-localidades" name="idLocalidad" class="select" required>
         </select>
         <input type="email"  maxlength="50"  name="correo" placeholder="Correo electrónico" value="<%= correo %>">
-        <input type="text" maxlength="50"  name="telefono" placeholder="Teléfono" value="<%= telefono %>">
+        <input type="text" maxlength="50"  id="telefono" name="telefono" placeholder="Teléfono" value="<%= telefono %>">
         <div>
             <h4>Propuestas</h4>
             <a>a)</a><input class="meta" name="propuesta1" type="text" maxlength="1000" value="<%= propuesta1 %>"><br>
@@ -27,3 +27,11 @@
         </div>
     </div>
 </form>
+
+<script>
+        $(document).ready(function (){
+          $('#telefono').keyup(function (){
+            this.value = (this.value + '').replace(/[^0-9]/g, '');
+          });
+        });
+</script>

@@ -49,18 +49,41 @@ define([
 
             if(this.model.isValid(true)){
                 this.model.save();
+                $('input[name=nombre]').val('');
+                $('input[name=materno]').val('');
+                $('input[name=paterno]').val('');
+                $('input[name=correo]').val('');
+                $('input[name=telefono]').val('');
+                $('input[name=propuesta1]').val('');
+                $('input[name=propuesta2]').val('');
+                $('input[name=propuesta3]').val('');
+                $('input[name=propuesta4]').val('');
                 alert("Gracias por tu opinión");
             } else {
                 $('input[name=nombre]').addClass('has-error');
+                $('input[name=paterno]').addClass('has-error');
+                $('input[name=materno]').addClass('has-error');
                 $('input[name=propuesta1]').addClass('has-error');
                 $('select[name=idLocalidad]').addClass('has-error');
+
             }
         },
 
         cancelar: function() {
                 $('input[name=nombre]').removeClass('has-error');
+                $('input[name=paterno]').removeClass('has-error');
+                $('input[name=materno]').removeClass('has-error');
                 $('input[name=propuesta1]').removeClass('has-error');
                 $('select[name=idLocalidad]').removeClass('has-error');
+                $('input[name=nombre]').val('');
+                $('input[name=materno]').val('');
+                $('input[name=paterno]').val('');
+                $('input[name=correo]').val('');
+                $('input[name=telefono]').val('');
+                $('input[name=propuesta1]').val('');
+                $('input[name=propuesta2]').val('');
+                $('input[name=propuesta3]').val('');
+                $('input[name=propuesta4]').val('');
 
         },
 
