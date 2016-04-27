@@ -443,6 +443,9 @@ select {
     margin: 1em;
 }
 
+#map{
+    width: 600px;
+}
 
 @media screen and (max-width: 1200px) {
     .contenedor {

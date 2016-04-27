@@ -48,6 +48,16 @@ require.config({
             deps: [
                 'jquery'
             ]
+        },
+        karto: {
+            deps: [
+                'jquery'
+            ]
+        },
+        raphael: {
+            deps: [
+                'jquery'
+            ]
         }
     },
     paths: {
@@ -63,7 +73,9 @@ require.config({
         datetimepicker: 'vendor/bootstrap/datetimepicker/bootstrap-datetimepicker',
         dateformat: 'vendor/date-format/date.format',
         bloodhound: 'vendor/typeahead/bloodhound',
-        typeahead: 'vendor/typeahead/typeahead.jquery'
+        typeahead: 'vendor/typeahead/typeahead.jquery',
+        karto: 'vendor/kartograph/kartograph.min',
+        raphael: 'vendor/kartograph/raphael-min'
     }
 });
 
