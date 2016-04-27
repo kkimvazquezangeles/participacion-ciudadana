@@ -33,8 +33,8 @@ define([
             this.listenTo(this.localidades, 'add', this.agregarLocalidad);
             this.listenTo(this.localidades, 'sync', this.syncLocalidad);
 
-            this.model.once("sync", this.savePropuestaSuccess);
             this.model.once("error", this.savePropuestaError);
+            this.model.once("sync", this.savePropuestaSuccess);
         },
 
         render: function() {
@@ -55,8 +55,6 @@ define([
                 $('input[name=propuesta1]').addClass('has-error');
                 $('select[name=idLocalidad]').addClass('has-error');
             }
-
-
         },
 
         cancelar: function() {
@@ -71,7 +69,7 @@ define([
         },
 
         savePropuestaSuccess: function(model, response, options){
-            alert("Success");
+            alert("Gracias por tu opinión");
         },
 
         savePropuestaError: function(model, response, options){
