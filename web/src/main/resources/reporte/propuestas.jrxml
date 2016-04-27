@@ -8,16 +8,12 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT
+		<![CDATA[SELECT CONCAT(CONCAT(CONCAT(CONCAT(PER.NOMBRE,' '),PER.PATERNO),' '),PER.MATERNO) AS Nombre,
+	CONCAT(CONCAT(CONCAT(LC.LOCALIDAD,', '),MN.MUNICIPIO),' ') AS Origen,
 	PRO.ID AS idPropuesta,
 	PER.ID AS idPersona,
-	PER.NOMBRE,
-	PER.PATERNO,
-	PER.MATERNO,
 	PER.CORREO_ELECTRONICO,
 	PER.TELEFONO,
-	LC.LOCALIDAD,
-	MN.MUNICIPIO,
 	PRO.PROPUESTA1,
 	PRO.PROPUESTA2,
 	PRO.PROPUESTA3,
@@ -33,15 +29,12 @@ WHERE
 	AND LC.MUNICIPIO_ID=MN.ID
 	AND MN.ID= $P{municipioid}]]>
 	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="origen" class="java.lang.String"/>
 	<field name="idpropuesta" class="java.lang.Long"/>
 	<field name="idpersona" class="java.lang.Long"/>
-	<field name="nombre" class="java.lang.String"/>
-	<field name="paterno" class="java.lang.String"/>
-	<field name="materno" class="java.lang.String"/>
 	<field name="correo_electronico" class="java.lang.String"/>
 	<field name="telefono" class="java.lang.String"/>
-	<field name="localidad" class="java.lang.String"/>
-	<field name="municipio" class="java.lang.String"/>
 	<field name="propuesta1" class="java.lang.String"/>
 	<field name="propuesta2" class="java.lang.String"/>
 	<field name="propuesta3" class="java.lang.String"/>
@@ -53,11 +46,11 @@ WHERE
 		<band height="60" splitType="Stretch">
 			<image>
 				<reportElement x="431" y="6" width="141" height="49" uuid="2c61ae4e-1471-4c92-ab01-2e37a22b080e"/>
-				<imageExpression><![CDATA["/web/src/main/resources/reporte/logo-1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["logo-1.jpg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="0" y="2" width="259" height="56" uuid="d2924516-1c1a-4223-8a76-ac37872a3d19"/>
-				<imageExpression><![CDATA["/web/src/main/resources/reporte/logo-cuentame.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["logo-cuentame.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -70,85 +63,64 @@ WHERE
 	<detail>
 		<band height="172" splitType="Stretch">
 			<textField>
-				<reportElement x="413" y="120" width="61" height="20" uuid="c2e2618a-e874-4e16-b879-1c3349b5729e"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isItalic="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="413" y="141" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
+				<reportElement x="395" y="140" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{correo_electronico}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="506" y="100" width="62" height="20" uuid="d2e0be05-7387-4a22-81bc-8cd2eb592aef"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" isItalic="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{localidad}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="439" y="100" width="67" height="20" uuid="b1827386-b40c-4803-9f7c-b845594fdc3a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" isItalic="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{municipio}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement x="259" y="0" width="69" height="22" uuid="8ab02670-870b-4c93-bd8b-e11a45a082a8"/>
+				<reportElement x="249" y="0" width="69" height="22" uuid="8ab02670-870b-4c93-bd8b-e11a45a082a8"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Propuestas]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="7" y="21" width="562" height="20" uuid="724251f1-0845-440f-b4dc-5ab4b84a7dde"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement x="29" y="21" width="510" height="20" uuid="724251f1-0845-440f-b4dc-5ab4b84a7dde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="7" y="40" width="562" height="20" uuid="f49fe964-fad6-4170-967c-980038264cb6"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement x="29" y="40" width="510" height="20" uuid="f49fe964-fad6-4170-967c-980038264cb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="7" y="60" width="562" height="20" uuid="1d8dbf1b-0594-461d-b0be-a129c7483c28"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement x="29" y="60" width="510" height="20" uuid="1d8dbf1b-0594-461d-b0be-a129c7483c28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="7" y="80" width="562" height="20" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement x="29" y="80" width="510" height="20" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta4}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="521" y="120" width="47" height="20" uuid="7fe731e8-b86f-4556-be12-d7b422262a65"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isItalic="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{materno}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="475" y="120" width="45" height="20" uuid="8c74ee2c-d117-44ea-8a6a-957264eb9e6c"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isItalic="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{paterno}]]></textFieldExpression>
-			</textField>
 			<line>
-				<reportElement x="29" y="160" width="510" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
+				<reportElement x="12" y="156" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
 			</line>
+			<textField>
+				<reportElement x="328" y="101" width="221" height="20" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="121" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
