@@ -53,11 +53,11 @@ WHERE
 		<band height="60" splitType="Stretch">
 			<image>
 				<reportElement x="431" y="6" width="141" height="49" uuid="2c61ae4e-1471-4c92-ab01-2e37a22b080e"/>
-				<imageExpression><![CDATA["/Users/kkimvazquezangeles/opt/java/participacion_ciudadana/web/src/main/resources/static/imagenes/logo-1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["/web/src/main/resources/reporte/logo-1.jpg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="0" y="2" width="259" height="56" uuid="d2924516-1c1a-4223-8a76-ac37872a3d19"/>
-				<imageExpression><![CDATA["/Users/kkimvazquezangeles/opt/java/participacion_ciudadana/web/src/main/resources/static/imagenes/logo-cuentame.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["/web/src/main/resources/reporte/logo-cuentame.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
