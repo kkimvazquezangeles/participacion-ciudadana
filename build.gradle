@@ -138,6 +138,10 @@ project(":web") {
         }
         compile 'org.slf4j:slf4j-log4j12:1.7.12'
 
+        compile 'net.sf.jasperreports:jasperreports:5.0.1'
+        compile 'net.sf.jasperreports:jasperreports-fonts:4.0.0'
+        compile 'com.lowagie:itext:2.1.7'
+
         testCompile 'org.springframework.boot:spring-boot-starter-test'
         testCompile 'junit:junit'
         testCompile 'org.assertj:assertj-core:1.7.0'

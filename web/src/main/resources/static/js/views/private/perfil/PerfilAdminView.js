@@ -1,6 +1,8 @@
 define([
     'jquery',
     'backbone',
+    'karto',
+    'raphael',
     'core/BaseView',
     'models/PerfilModel',
     'models/FileModel',
@@ -11,7 +13,7 @@ define([
     'collections/LocalidadesPropuestaCollection',
     'text!templates/private/perfil/tplPerfilAdmin.html',
     'Session'
-], function($, Backbone, BaseView, PerfilModel, FileModel, MunicipioModel,
+], function($, Backbone, karto, raphael, BaseView, PerfilModel, FileModel, MunicipioModel,
             ModalGenericView, FilesView, MunicipiosPropuestaCollection, LocalidadesPropuestaCollection,
             tplPerfilAdmin, Session){
 
@@ -56,6 +58,7 @@ define([
 
         syncMunicipio: function(){
             $('#select-municipios').change();
+            this.setUpMap();
         },
 
         agregarLocalidad: function(modelo){
@@ -78,8 +81,45 @@ define([
             }));
             this.localidades.fetch();
 
-        }
+        },
 
+        setUpMap: function(){
+	        var svgUrl = 'imagenes/HG.svg',
+    	        opts = { padding: 0 };
+
+            kartograph.map('#map').loadMap(svgUrl, this.mapLoaded, opts);
+        },
+
+        mapLoaded: function(map){
+            map.addLayer('admin1', {
+                styles: {
+                    stroke: '#aaa',
+                    fill: '#f6f4f2'
+                },
+                mouseenter: function(d, path) {
+                    path.attr('fill', Math.random() < 0.5 ? '#c04' : '#04c');
+                },
+                mouseleave: function(d, path) {
+                    path.animate({ fill: '#f6f4f2' }, 1000);
+                }
+            });
+
+            var points_of_interest = [
+
+            ];
+
+            map.addSymbols({
+                type: kartograph.LabeledBubble,
+                data: points_of_interest,
+                location: function(d) { return [d.lon, d.lat] },
+                title: function(d) { return d.name; },
+                radius: 3,
+                center: false,
+                attrs: { fill: 'black' },
+                labelattrs: { 'font-size': 11 },
+                buffer: true
+            });
+        }
     });
 
     return PerfilAdminView;
