@@ -5,7 +5,7 @@ server:
 security.basic.enabled: false
 endpoints.shutdown.enabled: true
 
-spring.profiles.active: devbd
+spring.profiles.active: preprobd
 spring.profiles.include: localbmvstorage,devmail
 
 ---
@@ -55,9 +55,9 @@ spring:
 
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-107-21-221-107.compute-1.amazonaws.com:5432/d7g8hai0qakg0o?sslmode=require
-    username: jgjsiqdcqdoycp
-    password: BRACL6CRuTFvx0c-vlyu6OfkMc
+    url: jdbc:postgresql://ec2-54-235-127-48.compute-1.amazonaws.com:5432/d7kacbbvksltkt?sslmode=require
+    username: taqtlcuaihskrt
+    password: qndzh6Iy5dcfnoagfrSmqC6rHb
 
 backend:
   admin:
