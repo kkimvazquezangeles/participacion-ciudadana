@@ -420,7 +420,7 @@ select {
 .consulta .botones {
     padding-right: 2em;
     padding-bottom: 3em;
-    padding-top: 2em;
+
 }
 
 .consulta h4 {
@@ -440,11 +440,12 @@ select {
 }
 
 .form-4 .select {
-    margin: 1em;
+    margin: .2em auto 0 2.8em;
 }
 
 #map{
-    width: 600px;
+    width: 400px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px) {

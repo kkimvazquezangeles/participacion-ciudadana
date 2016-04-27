@@ -39,10 +39,10 @@ public class ReportController {
             HttpServletResponse response,
             @RequestParam(value = "idMunicipio") Long idMunicipio,
             @RequestParam(value = "idLocalidad") Long idLocalidad) throws JRException, IOException, SQLException {
-        InputStream jasperStream = new ClassPathResource("propuesta.jasper").getInputStream();
+        InputStream jasperStream = new ClassPathResource("reporte/propuestaS.jasper").getInputStream();
         Map<String,Object> params = new HashMap<>();
-        params.put("carreraid", idMunicipio);
-        params.put("periodoid", idLocalidad);
+        params.put("municipioid", idMunicipio);
+        //params.put("periodoid", idLocalidad);
         JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource.getConnection());
 

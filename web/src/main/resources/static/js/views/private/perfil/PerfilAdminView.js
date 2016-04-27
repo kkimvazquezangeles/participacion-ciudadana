@@ -22,6 +22,7 @@ define([
 
         events: {
             'click #btn-exit'           : 'logout',
+            'click #btn-consultar'      : 'downloadFile',
             'change #select-municipios' : 'cambiarMunicipio'
         },
 
@@ -75,10 +76,6 @@ define([
             var idMunicipio = $(event.target).val();
             this.localidades.setIdMunicipio(idMunicipio);
             $('#select-localidades').html('');
-            $('#select-localidades').append($('<option>', {
-                value: ('0'),
-                text : ('Localidad')
-            }));
             this.localidades.fetch();
 
         },
@@ -90,6 +87,12 @@ define([
             kartograph.map('#map').loadMap(svgUrl, this.mapLoaded, opts);
         },
 
+        downloadFile: function(){
+            var url = "report/propuesta?idMunicipio=" + $('#select-municipios').val() +
+                        "&idLocalidad=0";
+            window.open(url, '_blank');
+        },
+
         mapLoaded: function(map){
             map.addLayer('admin1', {
                 styles: {
@@ -97,7 +100,7 @@ define([
                     fill: '#f6f4f2'
                 },
                 mouseenter: function(d, path) {
-                    path.attr('fill', Math.random() < 0.5 ? '#c04' : '#04c');
+                    path.attr('fill', Math.random() < 0.5 ? '#CC3' : '#F60');
                 },
                 mouseleave: function(d, path) {
                     path.animate({ fill: '#f6f4f2' }, 1000);

@@ -5,7 +5,7 @@ server:
 security.basic.enabled: false
 endpoints.shutdown.enabled: true
 
-spring.profiles.active: devbd
+spring.profiles.active: devpostgresql
 spring.profiles.include: localbmvstorage,devmail
 
 ---
@@ -16,6 +16,27 @@ spring:
     showSql: true
     dataBase: H2
     hibernate.generateDdl: true
+
+backend:
+  admin:
+    username: backendadmin
+    password: betuzo
+    backend.admin.role: BACKEND_ADMIN
+
+---
+spring:
+  profiles: devpostgresql
+
+  jpa:
+    showSql: true
+    dataBase: POSTGRESQL
+    hibernate.generateDdl: false
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/propuestadb
+    username: postgres
+    password: pimienta4
 
 backend:
   admin:
