@@ -47,21 +47,21 @@ WHERE
 				<staticText>
 					<reportElement x="408" y="8" width="89" height="47" forecolor="#CC0000" uuid="f5bbc334-feff-46d6-98a2-79c087b15931"/>
 					<textElement>
-						<font fontName="Arial" size="24" isBold="true" isPdfEmbedded="true"/>
+						<font fontName="Arial" size="24" isBold="true"/>
 					</textElement>
 					<text><![CDATA[OMAR]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="483" y="8" width="89" height="47" forecolor="#339900" uuid="b37a71bf-f39d-4418-a575-02f36696d750"/>
 					<textElement>
-						<font fontName="Arial" size="24" isBold="true" isPdfEmbedded="true"/>
+						<font fontName="Arial" size="24" isBold="true"/>
 					</textElement>
 					<text><![CDATA[FAYAD]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="446" y="33" width="78" height="20" forecolor="#999999" uuid="be7cb538-0209-4ca9-ae46-93eaea80665a"/>
 					<textElement>
-						<font fontName="Arial" isBold="true" isPdfEmbedded="true"/>
+						<font fontName="Arial" isBold="true"/>
 					</textElement>
 					<text><![CDATA[GOBERNADOR]]></text>
 				</staticText>
@@ -70,21 +70,21 @@ WHERE
 				<staticText>
 					<reportElement x="12" y="8" width="362" height="37" forecolor="#CC0000" uuid="d5ad9afe-7842-49d7-b579-ddb1002afa02"/>
 					<textElement>
-						<font fontName="Arial" size="25" isBold="true" isPdfEmbedded="true"/>
+						<font fontName="Arial" size="25" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Cuéntame tus Propuestas]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="105" y="34" width="106" height="20" forecolor="#999999" uuid="70e32a32-a4c8-47ae-9a3e-978e653052ea"/>
 					<textElement>
-						<font fontName="Arial" isBold="true" isPdfEmbedded="true"/>
+						<font fontName="Arial" isBold="true"/>
 					</textElement>
 					<text><![CDATA[#JuntosSiPodemos]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="26" y="1" width="147" height="19" forecolor="#CC0000" uuid="81c82c69-cd41-467f-9e52-f03003a6a0d0"/>
 					<textElement>
-						<font fontName="Arial" size="8" isBold="true" isPdfEmbedded="true"/>
+						<font fontName="Arial" size="8" isBold="true"/>
 					</textElement>
 					<text><![CDATA[(POR TI Y POR TU FAMILIA)]]></text>
 				</staticText>
