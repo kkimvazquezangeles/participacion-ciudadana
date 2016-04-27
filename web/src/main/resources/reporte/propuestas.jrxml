@@ -68,7 +68,7 @@ WHERE
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="183" splitType="Stretch">
+		<band height="172" splitType="Stretch">
 			<textField>
 				<reportElement x="413" y="120" width="61" height="20" uuid="c2e2618a-e874-4e16-b879-1c3349b5729e"/>
 				<textElement verticalAlignment="Middle">
@@ -77,8 +77,8 @@ WHERE
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="485" y="141" width="82" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement x="413" y="141" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{correo_electronico}]]></textFieldExpression>
@@ -91,7 +91,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{localidad}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="438" y="100" width="67" height="20" uuid="b1827386-b40c-4803-9f7c-b845594fdc3a"/>
+				<reportElement x="439" y="100" width="67" height="20" uuid="b1827386-b40c-4803-9f7c-b845594fdc3a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" isItalic="true"/>
 				</textElement>
@@ -146,6 +146,9 @@ WHERE
 				</textElement>
 				<textFieldExpression><![CDATA[$F{paterno}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="29" y="160" width="510" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
