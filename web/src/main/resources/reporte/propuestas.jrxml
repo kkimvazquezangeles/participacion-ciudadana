@@ -63,7 +63,7 @@ WHERE
 	<detail>
 		<band height="172" splitType="Stretch">
 			<textField>
-				<reportElement x="395" y="140" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
+				<reportElement x="394" y="138" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isItalic="true"/>
 				</textElement>
@@ -108,14 +108,14 @@ WHERE
 				<reportElement x="12" y="156" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
 			</line>
 			<textField>
-				<reportElement x="328" y="101" width="221" height="20" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
+				<reportElement x="327" y="100" width="221" height="20" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="328" y="121" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
+				<reportElement x="327" y="119" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isItalic="true"/>
 				</textElement>
