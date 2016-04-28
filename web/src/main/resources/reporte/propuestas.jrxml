@@ -47,21 +47,21 @@ WHERE
 				<staticText>
 					<reportElement x="408" y="8" width="89" height="47" forecolor="#CC0000" uuid="f5bbc334-feff-46d6-98a2-79c087b15931"/>
 					<textElement>
-						<font fontName="Arial" size="24" isBold="true"/>
+						<font size="24" isBold="true"/>
 					</textElement>
 					<text><![CDATA[OMAR]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="483" y="8" width="89" height="47" forecolor="#339900" uuid="b37a71bf-f39d-4418-a575-02f36696d750"/>
 					<textElement>
-						<font fontName="Arial" size="24" isBold="true"/>
+						<font size="24" isBold="true"/>
 					</textElement>
 					<text><![CDATA[FAYAD]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="446" y="33" width="78" height="20" forecolor="#999999" uuid="be7cb538-0209-4ca9-ae46-93eaea80665a"/>
 					<textElement>
-						<font fontName="Arial" isBold="true"/>
+						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[GOBERNADOR]]></text>
 				</staticText>
@@ -70,21 +70,21 @@ WHERE
 				<staticText>
 					<reportElement x="12" y="8" width="362" height="37" forecolor="#CC0000" uuid="d5ad9afe-7842-49d7-b579-ddb1002afa02"/>
 					<textElement>
-						<font fontName="Arial" size="25" isBold="true"/>
+						<font size="25" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Cuéntame tus Propuestas]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="105" y="34" width="106" height="20" forecolor="#999999" uuid="70e32a32-a4c8-47ae-9a3e-978e653052ea"/>
 					<textElement>
-						<font fontName="Arial" isBold="true"/>
+						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[#JuntosSiPodemos]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="26" y="1" width="147" height="19" forecolor="#CC0000" uuid="81c82c69-cd41-467f-9e52-f03003a6a0d0"/>
 					<textElement>
-						<font fontName="Arial" size="8" isBold="true"/>
+						<font size="8" isBold="true"/>
 					</textElement>
 					<text><![CDATA[(POR TI Y POR TU FAMILIA)]]></text>
 				</staticText>
@@ -100,44 +100,44 @@ WHERE
 	<detail>
 		<band height="172" splitType="Stretch">
 			<textField>
-				<reportElement x="394" y="138" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
+				<reportElement x="394" y="131" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isItalic="true"/>
+					<font size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{correo_electronico}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="249" y="0" width="69" height="22" uuid="8ab02670-870b-4c93-bd8b-e11a45a082a8"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="10" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Propuestas]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="29" y="21" width="510" height="20" uuid="724251f1-0845-440f-b4dc-5ab4b84a7dde"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="10"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="29" y="40" width="510" height="20" uuid="f49fe964-fad6-4170-967c-980038264cb6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="10"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="29" y="60" width="510" height="20" uuid="1d8dbf1b-0594-461d-b0be-a129c7483c28"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="10"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="29" y="80" width="510" height="20" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="10"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta4}]]></textFieldExpression>
 			</textField>
@@ -147,14 +147,14 @@ WHERE
 			<textField>
 				<reportElement x="327" y="100" width="221" height="20" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" isItalic="true"/>
+					<font isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="327" y="119" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
+				<reportElement x="327" y="115" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isItalic="true"/>
+					<font size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
