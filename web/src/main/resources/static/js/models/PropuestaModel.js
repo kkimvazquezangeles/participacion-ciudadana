@@ -17,7 +17,8 @@ define([
             propuesta1: '',
             propuesta2: '',
             propuesta3: '',
-            propuesta4: ''
+            propuesta4: '',
+            propuesta5: ''
 
         },
 

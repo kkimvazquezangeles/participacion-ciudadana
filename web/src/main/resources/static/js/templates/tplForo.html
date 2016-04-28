@@ -1,0 +1,35 @@
+    <div class="form-2">
+        <div>
+            <h3>Participación ciudadana</h3>
+        </div>
+        <div class="formulario">
+            <h4>Datos</h4>
+            <input type="text" maxlength="50" name="nombre" placeholder="Nombre" value="<%= nombre %>">
+            <input type="text" maxlength="50"  name="materno" placeholder="Apellido paterno" value="<%= materno %>">
+            <input type="text" maxlength="50"  name="paterno" placeholder="Apellido materno" value="<%= paterno %>">
+            <select id="select-municipios" name="idMunicipio" class="select" required>
+            </select>
+            <select id="select-localidades" name="idLocalidad" class="select" required>
+            </select>
+            <input type="email"  maxlength="50"  name="correo" placeholder="Correo electrónico" value="<%= correo %>">
+            <input type="text" maxlength="50"  id="telefono" name="telefono" placeholder="Teléfono" value="<%= telefono %>">
+            <div>
+                <h4>Propuestas</h4>
+                <input type="text" name="foro" value="FORO" value="<%= foro %>" disabled="true">
+                <input type="text" name="tema" value="TEMA" value="<%= tema %>" disabled="true">
+                <textarea name="propuesta" class="caja" rows="10" cols="40" value="<%= propuesta5 %>"></textarea>
+            </div>
+            <div class="botones">
+                <button id="btn-enviar" class="button" type="button">Enviar</button>
+                <button id="btn-cancelar" class="button" type="button">Cancelar</button>
+                <button id="btn-consultar" class="button btn-consultar" type="button">Salir</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function (){
+          $('#telefono').keyup(function (){
+            this.value = (this.value + '').replace(/[^0-9]/g, '');
+          });
+        });
+    </script>
