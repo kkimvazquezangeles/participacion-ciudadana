@@ -26,6 +26,9 @@ public class Persona {
     @ManyToOne
     @JoinColumn(name = "localidad_id", nullable = false)
     private Localidad localidad;
+    @ManyToOne
+    @JoinColumn(name = "tema_id", nullable = false)
+    private Tema tema;
 
     public Long getId() {
         return id;
@@ -95,6 +98,14 @@ public class Persona {
         return this.nombre + " " + this.paterno + " " + this.materno;
     }
 
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
+
     @Override
     public String toString() {
         return "Persona{" +
@@ -102,11 +113,11 @@ public class Persona {
                 ", nombre='" + nombre + '\'' +
                 ", paterno='" + paterno + '\'' +
                 ", materno='" + materno + '\'' +
-                ", correoElectronico=" + correoElectronico + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", fechaRegistro=" + fechaRegistro + '\'' +
-                ", localidad='" + localidad +
+                ", fechaRegistro=" + fechaRegistro +
+                ", localidad=" + localidad +
+                ", tema=" + tema +
                 '}';
     }
-
 }

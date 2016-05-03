@@ -22,6 +22,9 @@ public interface PropuestaService {
     String PROPERTY_PROPUESTA2      = "propuesta2";
     String PROPERTY_PROPUESTA3      = "propuesta3";
     String PROPERTY_PROPUESTA4      = "propuesta4";
+    String PROPERTY_ID_FORO         = "idForo";
+    String PROPERTY_ID_TEMA         = "idTema";
+    String PROPERTY_PROPUESTA5      = "propuesta5";
 
     Map<String,Object> createPropuesta(Map<String, String> propuesta);
     Map<String,Object> listPropuestasByMunicipio(Long idMunicipio);

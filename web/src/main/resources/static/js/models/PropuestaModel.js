@@ -18,6 +18,8 @@ define([
             propuesta2: '',
             propuesta3: '',
             propuesta4: '',
+            idForo:'',
+            idTema:'',
             propuesta5: ''
 
         },

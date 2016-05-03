@@ -15,6 +15,7 @@ public class Propuesta {
     private String propuesta2;
     private String propuesta3;
     private String propuesta4;
+    private String propuesta5;
     @ManyToOne
     @JoinColumn(name = "persona_id", nullable = false)
     private Persona persona;
@@ -59,6 +60,14 @@ public class Propuesta {
         this.propuesta4 = propuesta4;
     }
 
+    public String getPropuesta5() {
+        return propuesta5;
+    }
+
+    public void setPropuesta5(String propuesta5) {
+        this.propuesta5 = propuesta5;
+    }
+
     public Persona getPersona() {
         return persona;
     }
@@ -75,6 +84,7 @@ public class Propuesta {
                 ", propuesta2='" + propuesta2 + '\'' +
                 ", propuesta3='" + propuesta3 + '\'' +
                 ", propuesta4=" + propuesta4 + '\'' +
+                ", propuesta5=" + propuesta5 + '\'' +
                 ", persona='" + persona +
                 '}';
     }

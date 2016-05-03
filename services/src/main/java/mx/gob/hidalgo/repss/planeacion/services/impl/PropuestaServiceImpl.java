@@ -3,6 +3,7 @@ package mx.gob.hidalgo.repss.planeacion.services.impl;
 import mx.gob.hidalgo.repss.planeacion.model.Localidad;
 import mx.gob.hidalgo.repss.planeacion.model.Persona;
 import mx.gob.hidalgo.repss.planeacion.model.Propuesta;
+import mx.gob.hidalgo.repss.planeacion.model.Tema;
 import mx.gob.hidalgo.repss.planeacion.repositories.PersonaRepository;
 import mx.gob.hidalgo.repss.planeacion.repositories.PropuestaRepository;
 import mx.gob.hidalgo.repss.planeacion.services.PropuestaService;
@@ -59,12 +60,14 @@ public class PropuestaServiceImpl implements PropuestaService{
         map.put(PROPERTY_ID_LOCALIDAD, propuesta.getPersona().getLocalidad());
         map.put(PROPERTY_CORREO, propuesta.getPersona().getCorreoElectronico());
         map.put(PROPERTY_TELEFONO, propuesta.getPersona().getTelefono());
+        map.put(PROPERTY_ID_TEMA, propuesta.getPersona().getTema());
 
         map.put(PROPERTY_ID, propuesta.getId());
         map.put(PROPERTY_PROPUESTA1, propuesta.getPropuesta1());
         map.put(PROPERTY_PROPUESTA2, propuesta.getPropuesta2());
         map.put(PROPERTY_PROPUESTA3, propuesta.getPropuesta3());
         map.put(PROPERTY_PROPUESTA4, propuesta.getPropuesta4());
+        map.put(PROPERTY_PROPUESTA5, propuesta.getPropuesta5());
 
         return map;
     }
@@ -74,6 +77,8 @@ public class PropuestaServiceImpl implements PropuestaService{
         Persona persona = new Persona();
 
         Localidad localidad = new Localidad();
+
+        Tema tema = new Tema();
 
         if (propuestaMap.containsKey(PROPERTY_PERSONA_ID)) {
             persona.setId(Long.valueOf(propuestaMap.get(PROPERTY_PERSONA_ID)));
@@ -86,6 +91,9 @@ public class PropuestaServiceImpl implements PropuestaService{
 
         localidad.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_LOCALIDAD)));
         persona.setLocalidad(localidad);
+
+        tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA)));
+        persona.setTema(tema);
 
         propuesta.setPersona(persona);
         if (propuestaMap.containsKey(PROPERTY_ID)) {

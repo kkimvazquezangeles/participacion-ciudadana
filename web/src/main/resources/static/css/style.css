@@ -455,6 +455,14 @@ select {
     margin: 0 auto;
 }
 
+.formulario .caja {
+    width: 73.5em;
+    border-style: inset;
+    border-radius: .4em;
+    margin-left: .8em;
+    margin-top: .5em;
+}
+
 @media screen and (max-width: 1200px) {
     .contenedor {
         width: 100%;
