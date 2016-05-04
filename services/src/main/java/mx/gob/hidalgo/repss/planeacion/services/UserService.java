@@ -12,6 +12,10 @@ public interface UserService {
     String PROPERTY_PASSWORD_CONFIRM    = "passwordConfirm";
     String PROPERTY_ENABLED             = "enabled";
     String PROPERTY_ROLES               = "roles";
+    String PROPERTY_FORO                = "foro";
+    String PROPERTY_FORO_ID             = "foroId";
+    String PROPERTY_TEMA                = "tema";
+    String PROPERTY_TEMA_ID             = "temaId";
     String PROPERTY_CONTEXT             = "context";
 
     String PROPERTY_ROLE_DEFAULT        = "PUBLIC";

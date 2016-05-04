@@ -80,6 +80,10 @@ public class UserServiceImpl implements UserService {
         sessionDTO.put(PROPERTY_ROLES, getRolesByUser(user));
         sessionDTO.put(PROPERTY_ID, String.valueOf(user.getUsername()));
         sessionDTO.put(PROPERTY_USERNAME, user.getUsername());
+        sessionDTO.put(PROPERTY_FORO_ID, user.getTema().getForo().getId());
+        sessionDTO.put(PROPERTY_FORO, user.getTema().getForo().getForo());
+        sessionDTO.put(PROPERTY_TEMA, user.getTema().getTema());
+        sessionDTO.put(PROPERTY_TEMA_ID, user.getTema().getId());
         return sessionDTO;
     }
 

@@ -26,6 +26,11 @@ define([
             this.model = new PropuestaModel();
             Backbone.Validation.bind(this);
 
+            this.model.set('foro', Session.get('foro'));
+            this.model.set('foroId', Session.get('foroId'));
+            this.model.set('tema', Session.get('tema'));
+            this.model.set('temaId', Session.get('temaId'));
+
             this.municipios = new MunicipiosCollection();
             this.listenTo(this.municipios, 'add', this.agregarMunicipio);
             this.listenTo(this.municipios, 'sync', this.syncMunicipio);

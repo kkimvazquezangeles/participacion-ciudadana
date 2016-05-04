@@ -28,6 +28,10 @@ define([
                 Session.set('authenticated', true);
                 Session.set('username', user.username);
                 Session.set('roles', user.roles);
+                Session.set('foro', user.foro);
+                Session.set('foroId', user.foroId);
+                Session.set('tema', user.tema);
+                Session.set('temaId', user.temaId);
             }
 
             var router = new Router();

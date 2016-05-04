@@ -29,12 +29,20 @@ define([
 					Session.set('authenticated', true);
 					Session.set('username', user);
 					Session.set('roles', model.get('roles'));
+					Session.set('foro', model.get('foro'));
+					Session.set('foroId', model.get('foroId'));
+					Session.set('tema', model.get('tema'));
+					Session.set('temaId', model.get('temaId'));
 					if (remember) {
 						$.cookie('auth_token',
 						    JSON.stringify({
 						        username: user,
 						        token: model.get('token'),
-						        roles: model.get('roles')
+						        roles: model.get('roles'),
+						        foro: model.get('foro'),
+						        foroId: model.get('foroId'),
+						        tema: model.get('tema'),
+						        temaId: model.get('temaId')
 						    }));
 					}
 
@@ -50,6 +58,10 @@ define([
 					Session.set('authenticated', false);
 					Session.set('username', '');
 					Session.set('roles', []);
+					Session.set('foro', '');
+                    Session.set('foroId', '');
+                    Session.set('tema', '');
+                    Session.set('temaId', '');
                     $.removeCookie('auth_token')
                     $('#msg-error').show();
 				}
@@ -73,6 +85,10 @@ define([
 					});
                     Session.set('username', '');
                     Session.set('roles', []);
+					Session.set('foro', '');
+                    Session.set('foroId', '');
+                    Session.set('tema', '');
+                    Session.set('temaId', '');
                     $.removeCookie('auth_token')
 					console.log('Successfully saved!');
 					that();
