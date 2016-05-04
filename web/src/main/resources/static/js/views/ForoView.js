@@ -87,7 +87,9 @@ define([
         },
 
         salir: function() {
-            Backbone.history.navigate('', { trigger : true });
+            Session.logout(function(response){
+                Backbone.history.navigate('', { trigger : true });
+            });
         },
 
         savePropuestaSuccess: function(model, response, options){
