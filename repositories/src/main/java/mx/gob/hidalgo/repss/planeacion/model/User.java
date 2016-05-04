@@ -17,6 +17,9 @@ public class User {
 	private boolean enabled;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
+    @ManyToOne
+    @JoinColumn(name = "tema_id", nullable = true)
+    private Tema tema;
  
 	public User() {
 	}
@@ -66,4 +69,12 @@ public class User {
 	public void setUserRole(Set<UserRole> userRole) {
 		this.userRole = userRole;
 	}
+
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
 }

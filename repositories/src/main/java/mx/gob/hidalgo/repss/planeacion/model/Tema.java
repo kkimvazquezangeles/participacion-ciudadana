@@ -13,7 +13,7 @@ public class Tema {
     private Long id;
     private String tema;
     @ManyToOne
-    @JoinColumn(name = "tema_id", nullable = false)
+    @JoinColumn(name = "foro_id", nullable = false)
     private Foro foro;
 
     public Long getId() {
