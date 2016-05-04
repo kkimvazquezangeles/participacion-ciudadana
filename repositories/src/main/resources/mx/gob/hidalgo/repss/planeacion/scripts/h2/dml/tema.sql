@@ -7,7 +7,7 @@ INSERT INTO FORO (ID, FORO) VALUES
 (6,'Educación');
 
 INSERT INTO TEMA (ID, TEMA, FORO_ID) VALUES
-(1,'competitividad para la atracción de inversiones',1),
+(1,'Competitividad para la atracción de inversiones',1),
 (2,'Vocaciones regionales para la sustentabilidad',1),
 (3,'Turismo como instrumento de desarrollo regional',1),
 (4,'Economía social y solidaria',2),

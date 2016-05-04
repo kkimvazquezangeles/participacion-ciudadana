@@ -1,5 +1,5 @@
-INSERT INTO USUARIO (USERNAME, PASSWORD, ENABLED, ID_TEMA) VALUES
-('admin@participacion.gob.mx', 'AdM1n', 1, ),
+INSERT INTO USUARIO (USERNAME, PASSWORD, ENABLED, TEMA_ID) VALUES
+('admin@participacion.gob.mx', 'AdM1n', 1, 3),
 ('joaquin@participacion.gob.mx', 'Muniv3n', 1, 6),
 ('benjamin@participacion.gob.mx', 'Benjam1n', 1, 10),
 ('alejandro@participacion.gob.mx', 'AleV4zquez', 1, 13),
