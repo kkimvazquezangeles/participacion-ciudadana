@@ -19,6 +19,9 @@ public class Propuesta {
     @ManyToOne
     @JoinColumn(name = "persona_id", nullable = false)
     private Persona persona;
+    @ManyToOne
+    @JoinColumn(name = "tema_id", nullable = true)
+    private Tema tema;
 
     public Long getId() {
         return id;
@@ -75,6 +78,13 @@ public class Propuesta {
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
 
     @Override
     public String toString() {
@@ -85,6 +95,7 @@ public class Propuesta {
                 ", propuesta3='" + propuesta3 + '\'' +
                 ", propuesta4=" + propuesta4 + '\'' +
                 ", propuesta5=" + propuesta5 + '\'' +
+                ", tema=" + tema + '\'' +
                 ", persona='" + persona +
                 '}';
     }

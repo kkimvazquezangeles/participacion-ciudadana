@@ -39,7 +39,12 @@ define([
                 var user = this.model.get('username');
                 var pass = this.model.get('password');
                 Session.login(function(response){
+                    var roles = Session.get('roles');
+                    if(roles[0] === 'ADMIN'){
                     Backbone.history.navigate('admin', { trigger : true });
+                    } else {
+                    Backbone.history.navigate('admin/foro', { trigger : true });
+                    }
                 }, user, pass, true);
             } else {
                 $('input[name=username]').addClass('has-error');

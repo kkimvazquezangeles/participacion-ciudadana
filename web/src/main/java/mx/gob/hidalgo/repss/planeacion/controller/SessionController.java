@@ -51,6 +51,7 @@ public class SessionController {
         Map<String, Object> sessionDTO = new HashMap<String, Object>();
         sessionDTO = userService.findByUsername(user.get("username"));
 
+
         if (user.containsKey("logout")) {
             if (sessionDTO != null){
                 tokenService.delete(httpRequest.getHeader("X-Auth-Token"));

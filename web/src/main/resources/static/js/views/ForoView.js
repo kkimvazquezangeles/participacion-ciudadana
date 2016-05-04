@@ -18,7 +18,7 @@ define([
         events: {
             'click #btn-enviar': 'enviar',
             'click #btn-cancelar': 'cancelar',
-            'click #btn-consultar': 'consultar',
+            'click #btn-consultar': 'salir',
             'change #select-municipios': 'cambiarMunicipio'
         },
 
@@ -81,8 +81,8 @@ define([
 
         },
 
-        consultar: function() {
-            Backbone.history.navigate('admin', { trigger : true });
+        salir: function() {
+            Backbone.history.navigate('', { trigger : true });
         },
 
         savePropuestaSuccess: function(model, response, options){

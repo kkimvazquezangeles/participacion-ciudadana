@@ -60,7 +60,7 @@ public class PropuestaServiceImpl implements PropuestaService{
         map.put(PROPERTY_ID_LOCALIDAD, propuesta.getPersona().getLocalidad());
         map.put(PROPERTY_CORREO, propuesta.getPersona().getCorreoElectronico());
         map.put(PROPERTY_TELEFONO, propuesta.getPersona().getTelefono());
-        map.put(PROPERTY_ID_TEMA, propuesta.getPersona().getTema());
+        map.put(PROPERTY_ID_TEMA, propuesta.getTema());
 
         map.put(PROPERTY_ID, propuesta.getId());
         map.put(PROPERTY_PROPUESTA1, propuesta.getPropuesta1());
@@ -92,13 +92,13 @@ public class PropuestaServiceImpl implements PropuestaService{
         localidad.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_LOCALIDAD)));
         persona.setLocalidad(localidad);
 
-        tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA)));
-        persona.setTema(tema);
-
         propuesta.setPersona(persona);
         if (propuestaMap.containsKey(PROPERTY_ID)) {
             propuesta.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID)));
         }
+
+        tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA)));
+        propuesta.setTema(tema);
 
         propuesta.setPropuesta1(propuestaMap.get(PROPERTY_PROPUESTA1));
         propuesta.setPropuesta2(propuestaMap.get(PROPERTY_PROPUESTA2));

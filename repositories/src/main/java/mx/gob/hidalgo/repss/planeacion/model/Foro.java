@@ -1,13 +1,11 @@
 package mx.gob.hidalgo.repss.planeacion.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 
 /**
  * Created by kkimvazquezangeles on 29/04/16.
  */
+@Entity
 public class Foro {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="foro_id_seq")

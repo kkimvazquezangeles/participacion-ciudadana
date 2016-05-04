@@ -12,10 +12,11 @@ define([
 	'views/private/MainAdminNavView',
 	'views/public/MainView',
     'views/public/MainNavView',
+    'views/ForoView',
 	'Session'
 ], function($, _, Backbone, BaseRouter, LoginView, SignupView,
             TokenValidateView, TokenChangePassView, PerfilAdminView, FormularioView,
-            MainAdminNavView, MainView, MainNavView, Session){
+            MainAdminNavView, MainView, MainNavView, ForoView, Session){
         var Router = BaseRouter.extend({
 
         routes: {
@@ -28,7 +29,8 @@ define([
             'change/:token':                'changeToken',
             'admin':                        'admin',
             'admin/perfil':                 'adminPerfil',
-            'menu':                         'menu'
+            'menu':                         'menu',
+            'admin/foro':                   'foro'
         },
 
         requresAuth : ['#admin'],
@@ -123,6 +125,11 @@ define([
         menu: function() {
              var view = new MenuView();
              this.changeView(view);
+        },
+
+        foro: function() {
+              var view = new ForoView();
+              this.changeView(view);
         }
 	});
 
