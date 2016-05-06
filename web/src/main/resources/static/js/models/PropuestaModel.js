@@ -39,10 +39,6 @@ define([
             idLocalidad: {
                 required: true,
                 msg: 'Selecciona tu localidad'
-            },
-            propuesta1: {
-                required: true,
-                msg: 'Escribe una propuesta'
             }
         }
 
