@@ -18,7 +18,7 @@ define([
         events: {
             'click #btn-enviar': 'enviar',
             'click #btn-cancelar': 'cancelar',
-            'click #btn-consultar': 'salir',
+            'click #btn-consultar': 'logout',
             'change #select-municipios': 'cambiarMunicipio'
         },
 
@@ -86,7 +86,7 @@ define([
 
         },
 
-        salir: function() {
+        logout: function() {
             Session.logout(function(response){
                 Backbone.history.navigate('', { trigger : true });
             });
