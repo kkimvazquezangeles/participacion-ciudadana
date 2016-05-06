@@ -51,7 +51,7 @@ spring:
   jpa:
     showSql: false
     dataBase: POSTGRESQL
-    hibernate.generateDdl: true
+    hibernate.generateDdl: false
 
   datasource:
     driverClassName: org.postgresql.Driver
