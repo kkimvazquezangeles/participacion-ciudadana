@@ -51,6 +51,7 @@ define([
         enviar: function() {
             var data = this.$el.find(".form-2").serializeObject();
             this.model.set(data);
+            this.model.set('temaId', Session.get('temaId'));
 
             if(this.model.isValid(true)){
                 this.model.save();

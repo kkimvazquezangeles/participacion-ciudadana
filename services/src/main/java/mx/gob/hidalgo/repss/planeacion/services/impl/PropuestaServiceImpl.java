@@ -97,8 +97,10 @@ public class PropuestaServiceImpl implements PropuestaService{
             propuesta.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID)));
         }
 
-        tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA)));
-        propuesta.setTema(tema);
+        if (propuestaMap.containsKey(PROPERTY_ID_TEMA) && !propuestaMap.get(PROPERTY_ID_TEMA).trim().isEmpty()) {
+            tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA)));
+            propuesta.setTema(tema);
+        }
 
         propuesta.setPropuesta1(propuestaMap.get(PROPERTY_PROPUESTA1));
         propuesta.setPropuesta2(propuestaMap.get(PROPERTY_PROPUESTA2));
