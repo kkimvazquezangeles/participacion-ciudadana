@@ -59,13 +59,13 @@ define([
                 $('input[name=paterno]').val('');
                 $('input[name=correo]').val('');
                 $('input[name=telefono]').val('');
-                $('input[name=propuesta5]').val('');
+                $('textarea[name=propuesta5]').val('');
                 alert("Gracias por tu opinión");
             } else {
                 $('input[name=nombre]').addClass('has-error');
                 $('input[name=paterno]').addClass('has-error');
                 $('input[name=materno]').addClass('has-error');
-                $('input[name=propuesta5]').addClass('has-error');
+                $('textarea[name=propuesta5]').addClass('has-error');
                 $('select[name=idLocalidad]').addClass('has-error');
 
             }
