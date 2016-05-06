@@ -104,6 +104,7 @@ public class PropuestaServiceImpl implements PropuestaService{
         propuesta.setPropuesta2(propuestaMap.get(PROPERTY_PROPUESTA2));
         propuesta.setPropuesta3(propuestaMap.get(PROPERTY_PROPUESTA3));
         propuesta.setPropuesta4(propuestaMap.get(PROPERTY_PROPUESTA4));
+        propuesta.setPropuesta4(propuestaMap.get(PROPERTY_PROPUESTA5));
 
         return propuesta;
     }
