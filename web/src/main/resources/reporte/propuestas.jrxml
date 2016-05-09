@@ -179,8 +179,8 @@ WHERE
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="29" y="99" width="510" height="20" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="29" y="99" width="510" height="20" isRemoveLineWhenBlank="true" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{propuesta5}]]></textFieldExpression>
 			</textField>
