@@ -16,14 +16,22 @@
 	PRO.PROPUESTA1,
 	PRO.PROPUESTA2,
 	PRO.PROPUESTA3,
-	PRO.PROPUESTA4
+	PRO.PROPUESTA4,
+	PRO.PROPUESTA5,
+	TM.TEMA,
+	FR.FORO
+
 FROM
 	PROPUESTA PRO,
 	PERSONA PER,
 	LOCALIDAD LC,
-	MUNICIPIO MN
+	MUNICIPIO MN,
+	TEMA TM,
+	FORO FR
 WHERE
 	PRO.PERSONA_ID=PER.ID
+	AND PRO.TEMA_ID=TM.ID
+	AND TM.FORO_ID=FR.ID
 	AND PER.LOCALIDAD_ID=LC.ID
 	AND LC.MUNICIPIO_ID=MN.ID
 	AND MN.ID= $P{municipioid}]]>
@@ -38,6 +46,9 @@ WHERE
 	<field name="propuesta2" class="java.lang.String"/>
 	<field name="propuesta3" class="java.lang.String"/>
 	<field name="propuesta4" class="java.lang.String"/>
+	<field name="propuesta5" class="java.lang.String"/>
+	<field name="tema" class="java.lang.String"/>
+	<field name="foro" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -98,9 +109,9 @@ WHERE
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="172" splitType="Stretch">
+		<band height="205" splitType="Stretch">
 			<textField>
-				<reportElement x="394" y="131" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
+				<reportElement x="394" y="167" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8" isItalic="true"/>
 				</textElement>
@@ -142,21 +153,31 @@ WHERE
 				<textFieldExpression><![CDATA[$F{propuesta4}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="12" y="156" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
+				<reportElement x="12" y="192" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
 			</line>
 			<textField>
-				<reportElement x="327" y="100" width="221" height="20" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
+				<reportElement x="327" y="136" width="221" height="20" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="327" y="115" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
+				<reportElement x="327" y="151" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="99" width="208" height="20" uuid="d5474873-72f7-4a1b-915c-d8a9c23a2cf9"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="118" width="208" height="20" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
