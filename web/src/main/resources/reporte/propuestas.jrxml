@@ -125,28 +125,28 @@ WHERE
 				<text><![CDATA[Propuestas]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="21" width="510" height="20" uuid="724251f1-0845-440f-b4dc-5ab4b84a7dde"/>
+				<reportElement positionType="Float" x="29" y="21" width="510" height="20" isRemoveLineWhenBlank="true" uuid="724251f1-0845-440f-b4dc-5ab4b84a7dde"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="40" width="510" height="20" uuid="f49fe964-fad6-4170-967c-980038264cb6"/>
+				<reportElement positionType="Float" x="29" y="40" width="510" height="20" isRemoveLineWhenBlank="true" uuid="f49fe964-fad6-4170-967c-980038264cb6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="60" width="510" height="20" uuid="1d8dbf1b-0594-461d-b0be-a129c7483c28"/>
+				<reportElement positionType="Float" x="29" y="60" width="510" height="20" isRemoveLineWhenBlank="true" uuid="1d8dbf1b-0594-461d-b0be-a129c7483c28"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="80" width="510" height="20" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
+				<reportElement positionType="Float" x="29" y="80" width="510" height="20" isRemoveLineWhenBlank="true" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
@@ -170,12 +170,12 @@ WHERE
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="29" y="118" width="208" height="20" uuid="d5474873-72f7-4a1b-915c-d8a9c23a2cf9"/>
+				<reportElement positionType="Float" x="29" y="122" width="261" height="20" isRemoveLineWhenBlank="true" uuid="d5474873-72f7-4a1b-915c-d8a9c23a2cf9"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="29" y="137" width="208" height="20" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
+				<reportElement positionType="Float" x="29" y="141" width="261" height="20" isRemoveLineWhenBlank="true" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
 			</textField>
