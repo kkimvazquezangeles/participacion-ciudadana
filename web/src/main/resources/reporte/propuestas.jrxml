@@ -153,7 +153,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{propuesta4}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="12" y="192" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
+				<reportElement positionType="Float" x="12" y="192" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
 			</line>
 			<textField>
 				<reportElement positionType="Float" x="327" y="136" width="221" height="20" isPrintWhenDetailOverflows="true" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
