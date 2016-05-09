@@ -16,11 +16,6 @@ define([
         },
 
         validation: {
-            username: {
-                required: true,
-                pattern: 'email',
-                msg: 'Por favor especifique un email correcto'
-            },
             password: {
                 required: true,
                 pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/,

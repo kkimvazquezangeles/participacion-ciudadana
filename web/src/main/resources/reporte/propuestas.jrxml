@@ -170,14 +170,19 @@ WHERE
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="29" y="99" width="208" height="20" uuid="d5474873-72f7-4a1b-915c-d8a9c23a2cf9"/>
+				<reportElement x="29" y="118" width="208" height="20" uuid="d5474873-72f7-4a1b-915c-d8a9c23a2cf9"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="29" y="118" width="208" height="20" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
+				<reportElement x="29" y="137" width="208" height="20" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="99" width="510" height="20" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{propuesta5}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
