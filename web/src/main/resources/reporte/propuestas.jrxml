@@ -170,11 +170,6 @@ WHERE
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="29" y="122" width="261" height="20" isRemoveLineWhenBlank="true" uuid="d5474873-72f7-4a1b-915c-d8a9c23a2cf9"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement positionType="Float" x="29" y="141" width="261" height="20" isRemoveLineWhenBlank="true" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
@@ -183,6 +178,11 @@ WHERE
 				<reportElement positionType="Float" x="29" y="99" width="510" height="20" isRemoveLineWhenBlank="true" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{propuesta5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="29" y="122" width="261" height="19" isRemoveLineWhenBlank="true" uuid="7e6cf173-698c-403f-b6f4-2df0ce223904"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
