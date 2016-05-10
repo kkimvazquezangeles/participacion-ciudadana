@@ -163,17 +163,17 @@ WHERE
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="29" y="21" width="510" height="20" isRemoveLineWhenBlank="true" uuid="fcfdf687-1dec-48ce-bea4-7b318f458210"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="29" y="43" width="510" height="20" isRemoveLineWhenBlank="true" uuid="84f48ec2-2d49-4c95-a331-b38f049c38e6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="29" y="65" width="510" height="20" isRemoveLineWhenBlank="true" uuid="2de7d5c8-36fd-47e9-adbe-11e4374b68de"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
