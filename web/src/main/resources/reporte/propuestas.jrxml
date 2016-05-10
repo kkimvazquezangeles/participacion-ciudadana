@@ -109,80 +109,74 @@ WHERE
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="205" splitType="Stretch">
+		<band height="190" splitType="Stretch">
 			<textField>
-				<reportElement positionType="Float" x="394" y="167" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
+				<reportElement positionType="Float" x="385" y="164" width="154" height="15" uuid="bd171c8c-c9d5-4bdd-bb8c-62c644297e78"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{correo_electronico}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="249" y="0" width="69" height="22" uuid="8ab02670-870b-4c93-bd8b-e11a45a082a8"/>
+				<reportElement x="29" y="0" width="510" height="22" uuid="8ab02670-870b-4c93-bd8b-e11a45a082a8"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10" isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Propuestas]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="21" width="510" height="20" isRemoveLineWhenBlank="true" uuid="724251f1-0845-440f-b4dc-5ab4b84a7dde"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="40" width="510" height="20" isRemoveLineWhenBlank="true" uuid="f49fe964-fad6-4170-967c-980038264cb6"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="60" width="510" height="20" isRemoveLineWhenBlank="true" uuid="1d8dbf1b-0594-461d-b0be-a129c7483c28"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="80" width="510" height="20" isRemoveLineWhenBlank="true" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
+				<reportElement positionType="Float" x="29" y="87" width="510" height="20" isRemoveLineWhenBlank="true" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{propuesta4}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement positionType="Float" x="12" y="192" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
+				<reportElement positionType="Float" x="12" y="182" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
 			</line>
 			<textField>
-				<reportElement positionType="Float" x="327" y="136" width="221" height="20" isPrintWhenDetailOverflows="true" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
+				<reportElement positionType="Float" x="318" y="133" width="221" height="20" isPrintWhenDetailOverflows="true" uuid="4e5cfc4c-301a-4e54-9926-5c4cee10ea8a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="327" y="151" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
+				<reportElement positionType="Float" x="318" y="148" width="221" height="20" uuid="bd7a602e-6380-4047-ad1e-2180c6a472e5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="29" y="141" width="261" height="20" isRemoveLineWhenBlank="true" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
+				<reportElement positionType="Float" x="29" y="152" width="261" height="20" isRemoveLineWhenBlank="true" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="99" width="510" height="20" isRemoveLineWhenBlank="true" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
+				<reportElement positionType="Float" x="29" y="109" width="510" height="20" isRemoveLineWhenBlank="true" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{propuesta5}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="29" y="122" width="261" height="19" isRemoveLineWhenBlank="true" uuid="7e6cf173-698c-403f-b6f4-2df0ce223904"/>
+				<reportElement positionType="Float" x="29" y="133" width="261" height="19" isRemoveLineWhenBlank="true" uuid="7e6cf173-698c-403f-b6f4-2df0ce223904"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="29" y="21" width="510" height="20" isRemoveLineWhenBlank="true" uuid="fcfdf687-1dec-48ce-bea4-7b318f458210"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="29" y="43" width="510" height="20" isRemoveLineWhenBlank="true" uuid="84f48ec2-2d49-4c95-a331-b38f049c38e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="29" y="65" width="510" height="20" isRemoveLineWhenBlank="true" uuid="2de7d5c8-36fd-47e9-adbe-11e4374b68de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
