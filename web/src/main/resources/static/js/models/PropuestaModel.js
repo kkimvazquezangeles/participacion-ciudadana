@@ -39,7 +39,7 @@ define([
             idLocalidad: {
                 required: true,
                 msg: 'Selecciona tu localidad'
-            }
+            }                           
         }
 
     });

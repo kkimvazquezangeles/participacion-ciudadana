@@ -55,9 +55,9 @@ spring:
 
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-54-235-127-48.compute-1.amazonaws.com:5432/d7kacbbvksltkt?sslmode=require
-    username: taqtlcuaihskrt
-    password: qndzh6Iy5dcfnoagfrSmqC6rHb
+    url: jdbc:postgresql://187.237.235.102:5432/foro_db?sslmode=require
+    username: foro
+    password: Foro.123
 
 backend:
   admin:

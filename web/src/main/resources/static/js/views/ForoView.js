@@ -7,10 +7,11 @@ define([
     'models/PropuestaModel',
     'collections/MunicipiosCollection',
     'collections/LocalidadesCollection',
+    'collections/TemasCollection',
 	'text!templates/tplForo.html',
 	'Session'
 ], function($, BaseView, backbone, backboneValidation, jquerySerializeObject, PropuestaModel, MunicipiosCollection,
-    LocalidadesCollection, tplForo, Session){
+    LocalidadesCollection, TemasCollection, tplForo, Session){
 
 	var ForoView = BaseView.extend({
         template: _.template(tplForo),
@@ -38,6 +39,10 @@ define([
             this.listenTo(this.localidades, 'add', this.agregarLocalidad);
             this.listenTo(this.localidades, 'sync', this.syncLocalidad);
 
+            this.temas = new TemasCollection();
+            this.listenTo(this.temas, 'add', this.agregarTema);
+            this.listenTo(this.temas, 'sync', this.syncTema);
+
             this.model.once("error", this.savePropuestaError);
             this.model.once("sync", this.savePropuestaSuccess);
         },
@@ -45,6 +50,7 @@ define([
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
             this.municipios.fetch();
+            this.temas.fetch();
             return this;
         },
 
@@ -120,6 +126,16 @@ define([
         },
 
         syncLocalidad: function(){
+        },
+
+        agregarTema: function(modelo){
+            $('#select-temas').append($('<option>', {
+                value: modelo.get('idTema'),
+                text : modelo.get('tema')
+            }));
+        },
+
+        syncTema: function(){
         },
 
         cambiarMunicipio: function(event) {

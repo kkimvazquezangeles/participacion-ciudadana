@@ -90,7 +90,7 @@ define([
         },
 
         setUpMap: function(){
-	        var svgUrl = 'imagenes/HG.svg',
+	        var svgUrl = 'imagenes/hg.svg',
     	        opts = { padding: 0, data: this.totales };
 
             kartograph.map('#map').loadMap(svgUrl, this.mapLoaded.bind(this), opts);

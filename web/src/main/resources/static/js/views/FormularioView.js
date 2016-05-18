@@ -29,7 +29,7 @@ define([
             this.model.set('foro', 'Participación');
             this.model.set('foroId', '7');
             this.model.set('tema', 'Ciudadana');
-            this.model.set('temaId', '22');
+            this.model.set('temaId', Session.get('temaId'));
 
             this.municipios = new MunicipiosCollection();
             this.listenTo(this.municipios, 'add', this.agregarMunicipio);
