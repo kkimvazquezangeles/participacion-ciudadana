@@ -4,7 +4,8 @@ INSERT INTO FORO (ID, FORO) VALUES
 (3,'Desarrollo Agropecuario'),
 (4,'Salud'),
 (5,'Transparencia y rendición de cuentas'),
-(6,'Educación');
+(6,'Educación'),
+(7,'Participación');
 
 INSERT INTO TEMA (ID, TEMA, FORO_ID) VALUES
 (1,'Competitividad para la atracción de inversiones',1),
@@ -27,7 +28,9 @@ INSERT INTO TEMA (ID, TEMA, FORO_ID) VALUES
 (18,'Cobertura con equidad de género',6),
 (19,'Educación de 360',6),
 (20,'Calidad educativa',6),
-(21,'Impulso de la innovación',6);
+(21,'Impulso de la innovación',6),
+(22,'Participación Ciudadana',7);
+
 
 
 
