@@ -5,7 +5,7 @@ server:
 security.basic.enabled: false
 endpoints.shutdown.enabled: true
 
-spring.profiles.active: preprobd
+spring.profiles.active: devbd
 spring.profiles.include: localbmvstorage,devmail
 
 ---
