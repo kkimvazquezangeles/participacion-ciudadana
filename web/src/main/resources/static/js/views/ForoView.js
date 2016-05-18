@@ -58,7 +58,6 @@ define([
         enviar: function() {
             var data = this.$el.find(".form-2").serializeObject();
             this.model.set(data);
-            this.model.set('temaId', Session.get('temaId'));
 
             if(this.model.isValid(true)){
                 this.model.save();
@@ -67,13 +66,13 @@ define([
                 $('input[name=paterno]').val('');
                 $('input[name=correo]').val('');
                 $('input[name=telefono]').val('');
-                $('textarea[name=propuesta5]').val('');
+                $('textarea[name=propuesta1]').val('');
                 alert("Gracias por tu opinión");
             } else {
                 $('input[name=nombre]').addClass('has-error');
                 $('input[name=paterno]').addClass('has-error');
                 $('input[name=materno]').addClass('has-error');
-                $('textarea[name=propuesta5]').addClass('has-error');
+                $('textarea[name=propuesta1]').addClass('has-error');
                 $('select[name=idLocalidad]').addClass('has-error');
 
             }
@@ -83,14 +82,14 @@ define([
                 $('input[name=nombre]').removeClass('has-error');
                 $('input[name=paterno]').removeClass('has-error');
                 $('input[name=materno]').removeClass('has-error');
-                $('input[name=propuesta5]').removeClass('has-error');
+                $('input[name=propuesta1]').removeClass('has-error');
                 $('select[name=idLocalidad]').removeClass('has-error');
                 $('input[name=nombre]').val('');
                 $('input[name=materno]').val('');
                 $('input[name=paterno]').val('');
                 $('input[name=correo]').val('');
                 $('input[name=telefono]').val('');
-                $('input[name=propuesta5]').val('');
+                $('input[name=propuesta1]').val('');
 
         },
 
