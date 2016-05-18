@@ -6,7 +6,7 @@ define([
     var ForosCollection = Backbone.Collection.extend({
         model: ForoModel,
         url: function() {
-            return 'foros' ;
+            return 'foro' ;
         }
     });
 
