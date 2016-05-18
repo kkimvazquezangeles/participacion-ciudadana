@@ -20,7 +20,15 @@ define([
             propuesta4: '',
             idForo:'',
             idTema:'',
-            propuesta5: ''
+            idForo1:'',
+            idTema1:'',
+            idForo2:'',
+            idTema2:'',
+            idForo3:'',
+            idTema3:'',
+            idForo4:'',
+            idTema4:'',
+            propuesta5:''
 
         },
 

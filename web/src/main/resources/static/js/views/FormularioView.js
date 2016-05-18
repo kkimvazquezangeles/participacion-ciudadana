@@ -7,10 +7,12 @@ define([
     'models/PropuestaModel',
     'collections/MunicipiosCollection',
     'collections/LocalidadesCollection',
+    'collections/ForosCollection',
+    'collections/TemasCollection',
 	'text!templates/tplFormulario.html',
 	'Session'
 ], function($, BaseView, backbone, backboneValidation, jquerySerializeObject, PropuestaModel, MunicipiosCollection,
-    LocalidadesCollection, tplFormulario, Session){
+    LocalidadesCollection, ForosCollection, TemasCollection, tplFormulario, Session){
 
 	var FormularioView = BaseView.extend({
         template: _.template(tplFormulario),
@@ -19,17 +21,16 @@ define([
             'click #btn-enviar': 'enviar',
             'click #btn-cancelar': 'cancelar',
             'click #btn-consultar': 'consultar',
-            'change #select-municipios': 'cambiarMunicipio'
+            'change #select-municipios': 'cambiarMunicipio',
+            'change #select-foros1': 'cambiarForo1',
+            'change #select-foros2': 'cambiarForo2',
+            'change #select-foros3': 'cambiarForo3',
+            'change #select-foros4': 'cambiarForo4'
         },
 
         initialize: function() {
             this.model = new PropuestaModel();
             Backbone.Validation.bind(this);
-
-            this.model.set('foro', 'Participación');
-            this.model.set('foroId', '7');
-            this.model.set('tema', 'Ciudadana');
-            this.model.set('temaId', Session.get('temaId'));
 
             this.municipios = new MunicipiosCollection();
             this.listenTo(this.municipios, 'add', this.agregarMunicipio);
@@ -37,6 +38,13 @@ define([
             this.localidades = new LocalidadesCollection();
             this.listenTo(this.localidades, 'add', this.agregarLocalidad);
             this.listenTo(this.localidades, 'sync', this.syncLocalidad);
+
+            this.foros = new ForosCollection();
+            this.listenTo(this.foros, 'add', this.agregarForo);
+            this.listenTo(this.foros, 'sync', this.syncForo);
+            this.temas = new TemasCollection();
+            this.listenTo(this.temas, 'add', this.agregarTema);
+            this.listenTo(this.temas, 'sync', this.syncTema);
 
             this.model.once("error", this.savePropuestaError);
             this.model.once("sync", this.savePropuestaSuccess);
@@ -131,8 +139,84 @@ define([
             $('#select-localidades').empty();
             this.localidades.fetch();
 
-        }
+        },
 
+        agregarForo: function(modelo){
+            $('#select-foros1').append($('<option>', {
+                value: modelo.get('idForo'),
+                text : modelo.get('foro')
+            }));
+            $('#select-foros2').append($('<option>', {
+                value: modelo.get('idForo'),
+                text : modelo.get('foro')
+            }));
+            $('#select-foros3').append($('<option>', {
+                value: modelo.get('idForo'),
+                text : modelo.get('foro')
+            }));
+            $('#select-foros4').append($('<option>', {
+                value: modelo.get('idForo'),
+                text : modelo.get('foro')
+            }));
+        },
+
+        syncForo: function(){
+            $('#select-foros').change();
+        },
+
+        agregarTema: function(modelo){
+            $('#select-temas1').append($('<option>', {
+                value: modelo.get('idTema'),
+                text : modelo.get('tema')
+            }));
+            $('#select-temas2').append($('<option>', {
+                value: modelo.get('idTema'),
+                text : modelo.get('tema')
+            }));
+            $('#select-temas3').append($('<option>', {
+                value: modelo.get('idTema'),
+                text : modelo.get('tema')
+            }));
+            $('#select-temas4').append($('<option>', {
+                value: modelo.get('idTema'),
+                text : modelo.get('tema')
+            }));
+        },
+
+        syncTema: function(){
+        },
+
+        cambiarForo1: function(event) {
+            var idForo1 = $(event.target).val();
+            this.temas.setIdForo(idForo1);
+            $('#select-temas1').empty();
+            this.temas.fetch();
+
+        },
+
+        cambiarForo2: function(event) {
+            var idForo2 = $(event.target).val();
+            this.temas.setIdForo(idForo2);
+            $('#select-temas2').empty();
+            this.temas.fetch();
+
+        },
+
+        cambiarForo3: function(event) {
+            var idForo3 = $(event.target).val();
+            this.temas.setIdForo(idForo3);
+            $('#select-temas3').empty();
+            this.temas.fetch();
+
+        },
+
+        cambiarForo4: function(event) {
+            var idForo4 = $(event.target).val();
+            this.temas.setIdForo(idForo4);
+            $('#select-temas4').empty();
+            this.temas.fetch();
+
+        }
 
 	});
 
