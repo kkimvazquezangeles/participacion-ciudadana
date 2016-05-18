@@ -53,6 +53,7 @@ define([
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
             this.municipios.fetch();
+            this.foros.fetch();
             return this;
         },
 
@@ -161,29 +162,39 @@ define([
         },
 
         syncForo: function(){
-            $('#select-foros').change();
+            this.first = true;
+            $('#select-foros1').change();
+            //$('#select-foros2').change();
+            //$('#select-foros3').change();
+            //$('#select-foros4').change();
         },
 
         agregarTema: function(modelo){
-            $('#select-temas1').append($('<option>', {
-                value: modelo.get('idTema'),
-                text : modelo.get('tema')
-            }));
-            $('#select-temas2').append($('<option>', {
-                value: modelo.get('idTema'),
-                text : modelo.get('tema')
-            }));
-            $('#select-temas3').append($('<option>', {
-                value: modelo.get('idTema'),
-                text : modelo.get('tema')
-            }));
-            $('#select-temas4').append($('<option>', {
+            var selecttema='#select-temas1';
+            if (this.temaselect === 2){
+                selecttema='#select-temas2';
+            } else if(this.temaselect === 3){
+                selecttema='#select-temas3';
+            } else if(this.temaselect === 4){
+                selecttema='#select-temas4';
+            }
+
+            $(selecttema).append($('<option>', {
                 value: modelo.get('idTema'),
                 text : modelo.get('tema')
             }));
         },
 
         syncTema: function(){
+            if (this.first === true && this.temaselect === 1) {
+                $('#select-foros2').change();
+            } else if (this.first === true && this.temaselect === 2){
+                $('#select-foros3').change();
+            } else if (this.first === true && this.temaselect === 3){
+                $('#select-foros4').change();
+            } else if (this.first === true && this.temaselect === 4){
+                this.first = false;
+            }
         },
 
         cambiarForo1: function(event) {
@@ -191,7 +202,7 @@ define([
             this.temas.setIdForo(idForo1);
             $('#select-temas1').empty();
             this.temas.fetch();
-
+            this.temaselect = 1;
         },
 
         cambiarForo2: function(event) {
@@ -199,7 +210,7 @@ define([
             this.temas.setIdForo(idForo2);
             $('#select-temas2').empty();
             this.temas.fetch();
-
+            this.temaselect = 2;
         },
 
         cambiarForo3: function(event) {
@@ -207,7 +218,7 @@ define([
             this.temas.setIdForo(idForo3);
             $('#select-temas3').empty();
             this.temas.fetch();
-
+            this.temaselect = 3;
         },
 
         cambiarForo4: function(event) {
@@ -215,7 +226,7 @@ define([
             this.temas.setIdForo(idForo4);
             $('#select-temas4').empty();
             this.temas.fetch();
-
+            this.temaselect = 4;
         }
 
 	});

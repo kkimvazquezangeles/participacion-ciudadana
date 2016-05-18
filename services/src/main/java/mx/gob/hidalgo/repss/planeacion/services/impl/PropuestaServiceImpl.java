@@ -30,7 +30,39 @@ public class PropuestaServiceImpl implements PropuestaService{
     public Map<String, Object> createPropuesta(Map<String, String> propuestaMap) {
         Propuesta propuesta = convertMapToPropuesta(propuestaMap);
         personaRepository.save(propuesta.getPersona());
-        return convertPropuestaToMap(propuestaRepository.save(propuesta));
+        propuesta = propuestaRepository.save(propuesta);
+        Map<String, Object> result = convertPropuestaToMap(propuesta);
+        if (propuestaMap.containsKey(PROPERTY_PROPUESTA2) && !propuestaMap.get(PROPERTY_PROPUESTA2).trim().equals("")){
+            Propuesta pros = new Propuesta();
+            Tema tema = new Tema();
+            tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA2)));
+            pros.setPersona(propuesta.getPersona());
+            pros.setPropuesta(propuestaMap.get(PROPERTY_PROPUESTA2));
+            pros.setTema(tema);
+            propuestaRepository.save(pros);
+            result.put(PROPERTY_PROPUESTA2, propuestaMap.get(PROPERTY_PROPUESTA2));
+        }
+        if (propuestaMap.containsKey(PROPERTY_PROPUESTA3) && !propuestaMap.get(PROPERTY_PROPUESTA3).trim().equals("")){
+            Propuesta pros = new Propuesta();
+            Tema tema = new Tema();
+            tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA3)));
+            pros.setPersona(propuesta.getPersona());
+            pros.setPropuesta(propuestaMap.get(PROPERTY_PROPUESTA3));
+            pros.setTema(tema);
+            propuestaRepository.save(pros);
+            result.put(PROPERTY_PROPUESTA3, propuestaMap.get(PROPERTY_PROPUESTA3));
+        }
+        if (propuestaMap.containsKey(PROPERTY_PROPUESTA4) && !propuestaMap.get(PROPERTY_PROPUESTA4).trim().equals("")){
+            Propuesta pros = new Propuesta();
+            Tema tema = new Tema();
+            tema.setId(Long.valueOf(propuestaMap.get(PROPERTY_ID_TEMA4)));
+            pros.setPersona(propuesta.getPersona());
+            pros.setPropuesta(propuestaMap.get(PROPERTY_PROPUESTA4));
+            pros.setTema(tema);
+            propuestaRepository.save(pros);
+            result.put(PROPERTY_PROPUESTA4, propuestaMap.get(PROPERTY_PROPUESTA4));
+        }
+        return result;
     }
 
     @Override
@@ -66,8 +98,7 @@ public class PropuestaServiceImpl implements PropuestaService{
         map.put(PROPERTY_PROPUESTA1, propuesta.getPropuesta());
         /*map.put(PROPERTY_PROPUESTA2, propuesta.getPropuesta2());
         map.put(PROPERTY_PROPUESTA3, propuesta.getPropuesta3());
-        map.put(PROPERTY_PROPUESTA4, propuesta.getPropuesta4());
-        map.put(PROPERTY_PROPUESTA5, propuesta.getPropuesta5());*/
+        map.put(PROPERTY_PROPUESTA4, propuesta.getPropuesta4());*/
 
         return map;
     }
@@ -105,8 +136,7 @@ public class PropuestaServiceImpl implements PropuestaService{
         propuesta.setPropuesta(propuestaMap.get(PROPERTY_PROPUESTA1));
         /*propuesta.setPropuesta2(propuestaMap.get(PROPERTY_PROPUESTA2));
         propuesta.setPropuesta3(propuestaMap.get(PROPERTY_PROPUESTA3));
-        propuesta.setPropuesta4(propuestaMap.get(PROPERTY_PROPUESTA4));
-        propuesta.setPropuesta5(propuestaMap.get(PROPERTY_PROPUESTA5));*/
+        propuesta.setPropuesta4(propuestaMap.get(PROPERTY_PROPUESTA4));*/
 
         return propuesta;
     }
