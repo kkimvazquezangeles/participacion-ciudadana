@@ -9,17 +9,12 @@
 	<queryString>
 		<![CDATA[SELECT CONCAT(CONCAT(CONCAT(CONCAT(PER.NOMBRE,' '),PER.PATERNO),' '),PER.MATERNO) AS Nombre,
 	CONCAT(CONCAT(CONCAT(LC.LOCALIDAD,', '),MN.MUNICIPIO),' ') AS Origen,
+	CONCAT(CONCAT(CONCAT(FR.FORO,', '),TM.TEMA),' ') AS ForoTema,
 	PRO.ID AS idPropuesta,
 	PER.ID AS idPersona,
 	PER.CORREO_ELECTRONICO,
 	PER.TELEFONO,
-	PRO.PROPUESTA1,
-	PRO.PROPUESTA2,
-	PRO.PROPUESTA3,
-	PRO.PROPUESTA4,
-	PRO.PROPUESTA5,
-	TM.TEMA,
-	FR.FORO
+	PRO.PROPUESTA
 
 FROM
 	PROPUESTA PRO,
@@ -38,17 +33,12 @@ WHERE
 	</queryString>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="origen" class="java.lang.String"/>
+	<field name="forotema" class="java.lang.String"/>
 	<field name="idpropuesta" class="java.lang.Long"/>
 	<field name="idpersona" class="java.lang.Long"/>
 	<field name="correo_electronico" class="java.lang.String"/>
 	<field name="telefono" class="java.lang.String"/>
-	<field name="propuesta1" class="java.lang.String"/>
-	<field name="propuesta2" class="java.lang.String"/>
-	<field name="propuesta3" class="java.lang.String"/>
-	<field name="propuesta4" class="java.lang.String"/>
-	<field name="propuesta5" class="java.lang.String"/>
-	<field name="tema" class="java.lang.String"/>
-	<field name="foro" class="java.lang.String"/>
+	<field name="propuesta" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -124,13 +114,6 @@ WHERE
 				</textElement>
 				<text><![CDATA[Propuestas]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="87" width="510" height="20" isRemoveLineWhenBlank="true" uuid="132d8696-f40c-4ec3-910d-04508b88c7fc"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{propuesta4}]]></textFieldExpression>
-			</textField>
 			<line>
 				<reportElement positionType="Float" x="12" y="182" width="548" height="1" uuid="77dbe760-80cc-4a77-8f47-faebfd2c26a2"/>
 			</line>
@@ -148,35 +131,15 @@ WHERE
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement positionType="Float" x="29" y="152" width="261" height="20" isRemoveLineWhenBlank="true" uuid="8c4eb9b9-aae5-41be-9305-c10e278c32a3"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="29" y="22" width="510" height="20" isRemoveLineWhenBlank="true" uuid="125c68e4-b1cd-42ae-84bd-deb945046376"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{propuesta}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="109" width="510" height="20" isRemoveLineWhenBlank="true" uuid="ace35335-4465-42e6-a94e-5cb04f940633"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{propuesta5}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement positionType="Float" x="29" y="133" width="261" height="19" isRemoveLineWhenBlank="true" uuid="7e6cf173-698c-403f-b6f4-2df0ce223904"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{foro}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="21" width="510" height="20" isRemoveLineWhenBlank="true" uuid="fcfdf687-1dec-48ce-bea4-7b318f458210"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{propuesta1}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="43" width="510" height="20" isRemoveLineWhenBlank="true" uuid="84f48ec2-2d49-4c95-a331-b38f049c38e6"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{propuesta2}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="29" y="65" width="510" height="20" isRemoveLineWhenBlank="true" uuid="2de7d5c8-36fd-47e9-adbe-11e4374b68de"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{propuesta3}]]></textFieldExpression>
+				<reportElement positionType="Float" x="29" y="42" width="510" height="20" uuid="e6e0a10d-399e-4b09-9777-51f5c70a29a6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{forotema}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
