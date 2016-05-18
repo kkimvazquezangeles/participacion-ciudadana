@@ -40,6 +40,7 @@ define([
             this.listenTo(this.localidades, 'sync', this.syncLocalidad);
 
             this.temas = new TemasCollection();
+            this.temas.setIdForo(this.model.get('foroId'));
             this.listenTo(this.temas, 'add', this.agregarTema);
             this.listenTo(this.temas, 'sync', this.syncTema);
 

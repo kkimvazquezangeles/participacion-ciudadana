@@ -63,11 +63,11 @@ public class PropuestaServiceImpl implements PropuestaService{
         map.put(PROPERTY_ID_TEMA, propuesta.getTema());
 
         map.put(PROPERTY_ID, propuesta.getId());
-        map.put(PROPERTY_PROPUESTA1, propuesta.getPropuesta1());
-        map.put(PROPERTY_PROPUESTA2, propuesta.getPropuesta2());
+        map.put(PROPERTY_PROPUESTA1, propuesta.getPropuesta());
+        /*map.put(PROPERTY_PROPUESTA2, propuesta.getPropuesta2());
         map.put(PROPERTY_PROPUESTA3, propuesta.getPropuesta3());
         map.put(PROPERTY_PROPUESTA4, propuesta.getPropuesta4());
-        map.put(PROPERTY_PROPUESTA5, propuesta.getPropuesta5());
+        map.put(PROPERTY_PROPUESTA5, propuesta.getPropuesta5());*/
 
         return map;
     }
@@ -102,11 +102,11 @@ public class PropuestaServiceImpl implements PropuestaService{
             propuesta.setTema(tema);
         }
 
-        propuesta.setPropuesta1(propuestaMap.get(PROPERTY_PROPUESTA1));
-        propuesta.setPropuesta2(propuestaMap.get(PROPERTY_PROPUESTA2));
+        propuesta.setPropuesta(propuestaMap.get(PROPERTY_PROPUESTA1));
+        /*propuesta.setPropuesta2(propuestaMap.get(PROPERTY_PROPUESTA2));
         propuesta.setPropuesta3(propuestaMap.get(PROPERTY_PROPUESTA3));
         propuesta.setPropuesta4(propuestaMap.get(PROPERTY_PROPUESTA4));
-        propuesta.setPropuesta5(propuestaMap.get(PROPERTY_PROPUESTA5));
+        propuesta.setPropuesta5(propuestaMap.get(PROPERTY_PROPUESTA5));*/
 
         return propuesta;
     }

@@ -4,7 +4,7 @@ define([
 ], function(Backbone, TemaModel){
 
     var TemasCollection = Backbone.Collection.extend({
-        model: TemaaModel,
+        model: TemaModel,
         url: function() {
             return 'foro/' + this.idForo + '/temas' ;
         },
